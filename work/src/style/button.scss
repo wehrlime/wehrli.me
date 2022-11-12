@@ -1,0 +1,41 @@
+button,
+.button {
+  padding: space(1) space(2);
+  border-radius: space(1);
+  border: none;
+  appearance: none;
+  font-size: 16px;
+  font-weight: 400;
+  background: color(sky);
+  display: inline-block;
+  cursor: pointer;
+  color: color(sky, lightest);
+
+  &--large {
+    font-size: 18px;
+  }
+
+  &:after {
+    display: none;
+  }
+
+  &:hover {
+    color: color(sky, lightest);
+    background: color(sky, light);
+  }
+  &:active {
+    color: color(sky, lightest);
+    background: color(sky, lighter);
+  }
+
+  &--gradient {
+    @include buttonGradient();
+
+    &:hover {
+      @include buttonGradient(3);
+    }
+    &:active {
+      @include buttonGradient(7);
+    }
+  }
+}

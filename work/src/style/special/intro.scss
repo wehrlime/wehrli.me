@@ -1,0 +1,39 @@
+.special-intro {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  gap: space(7);
+  padding: space(8) space(8);
+
+  &__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: space(4);
+
+    &__inner {
+      text-align: right;
+      margin: 0;
+    }
+
+    &__contact {
+      text-align: right;
+
+      p {
+        margin-bottom: space(2);
+      }
+    }
+  }
+
+  &__image {
+    height: 320px;
+    min-width: 30%;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

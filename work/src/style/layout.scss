@@ -1,0 +1,120 @@
+html,
+body {
+  margin: 0;
+  background: color(sky, lighter);
+}
+
+.header,
+header {
+  display: flex;
+  justify-content: center;
+  padding: space(4) space(5) calc(#{space(4)} - 2px) space(5);
+  background-color: color(sky, lighter);
+  border-bottom: dashed 2px color(sky, light);
+
+  &__inner {
+    display: flex;
+    flex: 1;
+    max-width: calc(1200px + calc(#{space(5)} * 2));
+
+    &__logo {
+      position: relative;
+      height: 50px;
+
+      img {
+        position: absolute;
+        height: 123%;
+      }
+    }
+
+    &__nav {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: space(3);
+
+      a {
+        font-size: 20px;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.section,
+section {
+  padding: space(6) 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: color(sky, lightest);
+
+  .article,
+  article {
+    width: 100%;
+    max-width: calc(1200px + calc(#{space(5)} * 2));
+    padding: space(7) space(5);
+
+    &--centered {
+      text-align: center;
+    }
+
+    &--max-width {
+      max-width: 600px;
+    }
+
+    > .lead {
+      max-width: 700px;
+    }
+  }
+}
+
+.footer,
+footer {
+  display: flex;
+  justify-content: center;
+  padding: space(6) space(5);
+  background-color: color(sky, lighter);
+  border-top: dashed 2px color(sky, light);
+
+  &__inner {
+    max-width: calc(1200px + calc(#{space(5)} * 2));
+    display: flex;
+    flex: 1;
+
+    &__left,
+    &__center,
+    &__right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    &__center {
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100px;
+        position: relative;
+        opacity: 0.03;
+      }
+    }
+
+    &__right {
+      align-items: flex-end;
+      justify-content: flex-end;
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        text-align: right;
+      }
+    }
+  }
+}
