@@ -8,9 +8,9 @@ body {
 header {
   display: flex;
   justify-content: center;
-  padding: space(4) space(5) calc(#{space(4)} - 2px) space(5);
-  background-color: color(sky, lighter);
-  border-bottom: dashed 2px color(sky, light);
+  padding: space(5) space(5) calc(#{space(5)} - 2px) space(5);
+  background-color: color(sky, lightest);
+  /*border-bottom: dashed 2px color(sky, light);*/
 
   &__inner {
     display: flex;
