@@ -3,7 +3,7 @@
   width: 100%;
   max-width: 1280px;
   gap: space(7);
-  padding: 10vh space(8);
+  padding: 10vh space(8) 10vh space(4);
 
   &__text {
     flex: 1;
@@ -33,7 +33,8 @@
 
     img {
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 80%;
     }
   }
 }

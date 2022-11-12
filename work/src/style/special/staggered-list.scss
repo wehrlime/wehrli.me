@@ -15,4 +15,16 @@
   padding: space(3);
   border-radius: space(1);
   background-color: color(sky, lighter);
+  display: flex;
+  flex-direction: column;
+
+  &__more {
+    align-self: flex-end;
+    color: color(ink, lightest);
+    font-size: 18px;
+
+    &:after {
+      border-color: color(sky, dark);
+    }
+  }
 }

@@ -93,6 +93,10 @@ footer {
       display: flex;
       flex-direction: column;
       flex: 1;
+
+      p.threepmw {
+        white-space: nowrap;
+      }
     }
 
     &__center {

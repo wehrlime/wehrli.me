@@ -1,9 +1,8 @@
 {
-  "name": "my-webpack-project",
+  "name": "wehrli.me",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "wehrli.me",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
     "@webpack-cli/generators": "^2.5.0",
     "copy-webpack-plugin": "^11.0.0",
@@ -11,6 +10,8 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.19",
+    "postcss-loader": "^7.0.1",
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",

@@ -1,0 +1,20 @@
+.accordion {
+  .accordion-visible {
+    display: block;
+  }
+  .accordion-hidden {
+    display: none;
+  }
+
+  &:hover {
+    .accordion-visible {
+      display: none;
+    }
+    .accordion-hidden {
+      display: block;
+      border-top: solid 1px color(sky);
+      padding-top: space(2);
+      margin-top: space(1);
+    }
+  }
+}

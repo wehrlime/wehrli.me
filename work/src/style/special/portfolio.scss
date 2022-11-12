@@ -1,0 +1,43 @@
+.portfolio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: space(6);
+
+  &__item {
+    overflow: hidden;
+    border-radius: space(1);
+    background-color: color(sky, lighter);
+    box-shadow: 0 0 space(2) 0 rgba(0, 0, 0, 0.3);
+
+    &__image {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      padding: space(2);
+
+      &__title {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      &__text {
+      }
+
+      &__visit-link {
+        margin-top: space(1);
+        align-self: flex-end;
+        font-size: 18px;
+      }
+    }
+  }
+}
