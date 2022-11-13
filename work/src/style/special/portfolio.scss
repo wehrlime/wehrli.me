@@ -1,42 +1,63 @@
-.portfolio {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: space(6);
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  overflow: hidden;
+  border-radius: space(1);
 
-  &__item {
-    overflow: hidden;
-    border-radius: space(1);
-    background-color: color(sky, lighter);
-    box-shadow: 0 0 space(2) 0 rgba(0, 0, 0, 0.3);
+  &--horizontal {
+    flex-direction: row;
 
-    &__image {
-      height: 180px;
-      position: relative;
-      overflow: hidden;
-
-      img {
-        position: absolute;
-        width: 100%;
-      }
+    .portfolio-item__image {
+      flex: 1;
+      height: auto;
     }
 
-    &__inner {
+    .portfolio-item__inner {
+      flex: 2;
+    }
+  }
+
+  &__image {
+    aspect-ratio: 2.5/1;
+    position: relative;
+    overflow: hidden;
+    border-radius: space(1);
+    transition: filter 0.1s ease-in-out 0s;
+
+    img,
+    picture {
+      position: absolute;
+      width: 100%;
+      border-radius: space(1);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    &__visit-link {
+      margin-top: space(1);
+      align-self: flex-end;
+      font-size: 18px;
+      margin-top: space(3);
+    }
+
+    &__stack-icons {
       display: flex;
-      flex-direction: column;
-      padding: space(2);
+      flex-direction: row;
+      margin-top: space(2);
+      gap: space(1);
+      align-items: center;
 
-      &__title {
-        font-size: 20px;
-        font-weight: 500;
-      }
-
-      &__text {
-      }
-
-      &__visit-link {
-        margin-top: space(1);
-        align-self: flex-end;
-        font-size: 18px;
+      img {
+        height: 20px;
       }
     }
   }

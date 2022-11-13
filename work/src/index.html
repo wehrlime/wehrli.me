@@ -3,25 +3,175 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Lorem Ipsum dolor sit amet" />
+    <meta class="anchor" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta class="anchor" name="description" content="Lorem Ipsum dolor sit amet" />
     <title>Spezialsoftware fürs Internet | wehrli.me</title>
   </head>
   <body>
+    <a class="anchor" name="start"></a>
     <header class="header">
       <div class="header__inner">
         <div class="header__inner__logo">
-          <img src="<%= require('./asset/img/svg/logo.svg') %>" alt="wehrli.me Logo" />
+          <img
+            src="<%= require('./asset/img/svg/logo.svg') %>"
+            alt="wehrli.me Logo"
+            width="91"
+            height="50"
+          />
         </div>
-        <nav class="header__inner__nav">
-          <a href="#">Leistungen</a>
-          <a href="#">Über mich</a>
-          <a href="#">Technologie</a>
-          <a href="#">Portfolio</a>
+        <nav data-page="default" class="page header__inner__nav">
+          <a class="header__inner__nav__item header__inner__nav__item--active" href="#start">
+            Start
+          </a>
+          <a class="header__inner__nav__item" href="#leistungen">Leistungen</a>
+          <a class="header__inner__nav__item" href="#ueber-mich">Über mich</a>
+          <a class="header__inner__nav__item" href="#technologie">Technologie</a>
+          <a class="header__inner__nav__item" href="#portfolio">Portfolio</a>
+        </nav>
+        <nav data-page="impressum" class="page header__inner__nav">
+          <a class="header__inner__nav__item" href="/"> Zur Startseite </a>
+        </nav>
+        <nav data-page="datenschutz" class="page header__inner__nav">
+          <a class="header__inner__nav__item" href="/"> Zur Startseite </a>
         </nav>
       </div>
     </header>
-    <section>
+    <section class="page" data-page="impressum">
+      <article class="article--standalone">
+        <h2>Impressum</h2>
+        <h3>Postadresse</h3>
+        <p>Michel Wehrli<br />Gysulaweg 7<br />5034 Suhr</p>
+        <h3>Kontakt</h3>
+        <p><a href="mailto:info@wehrli.me">info@wehrli.me</a><br /></p>
+      </article>
+    </section>
+    <section class="page" data-page="datenschutz">
+      <article class="article--standalone">
+        <h2>Datenschutz</h2>
+
+        <p class="lead">
+          Diese Datenschutzerklärung und Nutzungsbestimmungen finden auf allen von mir angebotenen
+          Webseiten Anwendung. Wir behalten uns ausdrücklich das Recht vor, die Datenschutzerklärung
+          und Nutzungsbestimmungen jederzeit zu ändern.
+        </p>
+
+        <h3>Beschaffung und Bearbeitung personenbezogener Daten</h3>
+        <p>
+          Sie können unsere Webseite besuchen, ohne Angaben zu Ihrer Person zu machen. Wir speichern
+          lediglich Zugriffsdaten ohne Personenbezug wie zum Beispiel den Namen Ihres Internet
+          Service Providers, die Seite, von der aus Sie uns besuchen oder den Namen der
+          angeforderten Datei. Diese Daten werden wir ausschliesslich zur Verbesserung unseres
+          Angebots auswerten und erlauben keinen Rückschluss auf Ihre Person.
+        </p>
+
+        <h3>Verwendung von Cookies</h3>
+        <p>
+          Auf verschiedenen Seiten verwenden wir Cookies, um den Besuch unserer Website attraktiver
+          zu gestalten und die Nutzung bestimmter Funktionen zu ermöglichen. Hierbei handelt es sich
+          um kleine Textdateien, die auf Ihrem Computer abgelegt werden. Die meisten der von uns
+          verwendeten Cookies werden nach Ende der Browser-Sitzung wieder von Ihrer Festplatte
+          gelöscht (sog. Sitzungs- oder Session-Cookies). Andere Cookies verbleiben auf Ihrem
+          Computer und ermöglichen uns, Sie bei Ihrem nächsten Besuch wieder zu erkennen (sog.
+          dauerhafte Cookies).
+        </p>
+        <p>
+          Sie können die Speicherung von Cookies in Ihrem Browser verhindern, indem Sie das
+          Speichern und Lesen von Cookies einschränken oder ausschalten. Bitte beachten Sie, dass
+          Sie möglicherweise gewisse Funktionen unserer Website ohne Cookies nicht nutzen können.
+        </p>
+
+        <h3>Google Analytics (Benutzeranalyse)</h3>
+        <p>
+          Unsere Webseite benutzt Google Analytics, einen Webanalysedienst der Google Inc., 1600
+          Amphitheatre Parkway, Mountain View, CA 94043, USA (”Google“). Google Analytics verwendet
+          sog. ”Cookies“, Textdateien, die auf Ihrem Computer gespeichert werden und die eine
+          Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie erzeugten
+          Informationen über Ihre Benutzung dieser Webseite (einschliesslich Ihrer IP-Adresse) wird
+          an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese
+          Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die
+          Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der
+          Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird
+          Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich
+          vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google
+          wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google in Verbindung bringen.
+          Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser
+          Software verhindern.
+        </p>
+        <p>
+          Detaillierte Informationen über die Datenschutzregeln von Google sind auf der Website von
+          Google nachzulesen.
+        </p>
+        <p>
+          Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie
+          erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor
+          benannten Zweck einverstanden.
+        </p>
+
+        <h3>Eingebettete Inhalte anderer Webseiten</h3>
+        <p>
+          >Beiträge auf dieser Webseite können eingebettete Inhalte beinhalten (z. B. Videos,
+          Bilder, Beiträge etc.). Eingebettete Inhalte von anderen Webseiten verhalten sich exakt
+          so, als ob der Besucher die andere Website besucht hätte. Diese Webseiten können Daten
+          über Sie sammeln, Cookies benutzen, zusätzliche Tracking-Dienste von Dritten einbetten und
+          Ihre Interaktion mit diesem eingebetteten Inhalt aufzeichnen, inklusive Ihrer Interaktion
+          mit dem eingebetteten Inhalt, falls Sie ein Konto haben und auf dieser Website angemeldet
+          sind.
+        </p>
+
+        <h3>Datenschutz</h3>
+        <p>
+          Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die
+          datenschutzrechtlichen Bestimmungen des Bundes (Datenschutzgesetz, DSG) hat jede Person
+          Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen
+          Daten. Wir halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich
+          behandelt und weder an Dritte verkauft noch weiter gegeben. In enger Zusammenarbeit mit
+          unseren Hosting-Providern bemühen wir uns, die Datenbanken so gut wie möglich vor fremden
+          Zugriffen, Verlusten, Missbrauch oder vor Fälschung zu schützen.
+        </p>
+        <p>
+          >Beim Zugriff auf unsere Webseiten werden folgende Daten in Logfiles gespeichert:
+          IP-Adresse, Datum, Uhrzeit, Browser-Anfrage und allg. übertragene Informationen zum
+          Betriebssystem resp. Browser. Diese Nutzungsdaten bilden die Basis für statistische,
+          anonyme Auswertungen, so dass Trends erkennbar sind, anhand derer wir unsere Angebote
+          entsprechend verbessern können.
+        </p>
+        <p>
+          Ich verwende Personendaten ausschliesslich zum Zweck, eigene Dienstleistungen zu
+          erbringen. Wir bewahrt Personendaten nur soweit und solange auf, als es zur Erbringung der
+          Dienstleistungen erforderlich ist oder wir von Gesetzes wegen dazu verpflichtet sind.
+        </p>
+
+        <h3>Haftungsausschluss</h3>
+        <p>
+          Der Inhalt dieser Website wird regelmässig gepflegt. Trotzdem können darin falsche oder
+          veraltete Angaben oder Aussagen enthalten sein. Der Betreiber dieser Website lehnt jede
+          Haftung für fehlerhafte oder falsche Inhalte ab. Ausserdem bleiben Änderungen an Inhalt
+          und Funktion dieser Website jederzeit vorbehalten.
+        </p>
+        <p>
+          Die Benutzung dieser Website erfolgt durch den Benutzer in Eigenverantwortung. Sollte aus
+          der Nutzung dieser Website oder von Anwendungen dieser Website ein Schaden entstehen, wird
+          jede Haftung durch den Betreiber dieser Website abgelehnt.
+        </p>
+        <p>
+          Diese Website enthält Links auf andere Websites. Für den Inhalt und die Funktion dieser
+          verlinkten Websites sind ausschliesslich deren Betreiber verantwortlich.
+        </p>
+
+        <h3>Copyright</h3>
+        <p>
+          Sämtliche Inhalte dieser Website, die verwendeten Marken und Signete, alle verlinkten
+          Dokumente, Bilder, Videos und alle zum Download oder zur Nutzung angebotenen Dokumente
+          sind urheberrechtlich, lizenzrechtlich oder markenrechtlich geschützt und dürfen ohne die
+          schriftliche Genehmigung durch die Rechteinhaber weder kopiert, noch verteilt, noch
+          ausserhalb der Funktion auf dieser Website genutzt, noch an Dritte weitergegeben werden.
+          Jede unberechtigte Nutzung ist eine Rechtsverletzung und wird juristisch verfolgt.
+        </p>
+
+        <p>13.11.2022, 5034 Suhr</p>
+      </article>
+    </section>
+    <section class="page" data-page="default">
       <div class="special-intro">
         <div class="special-intro__text">
           <!--<p class="special-intro__text__inner">
@@ -38,20 +188,43 @@
               Benötigen Sie eine massgeschneiderte<br />
               Software-Lösung für Ihre Unternehmung?
             </p>
-            <a href="mailto:michel@wehrli.me" class="button button--gradient button--large">
+            <a href="mailto:info@wehrli.me" class="button button--gradient button--large">
               Kontaktieren Sie mich
             </a>
           </div>
         </div>
         <div class="special-intro__image">
-          <!--<img src="<%= require('./asset/img/svg/blob.svg') %>" alt="Portrait von Michel Wehrli" />-->
-          <img
-            src="<%= require('./asset/img/jpg/shitty_portrait.jpg') %>"
-            alt="Portrait von Michel Wehrli"
-          />
+          <svg viewBox="0 0 398.6 435.4" width="0" height="0">
+            <clipPath
+              id="blob"
+              clipPathUnits="objectBoundingBox"
+              transform="scale(0.002508, 0.002296)"
+            >
+              <path
+                class="st0"
+                d="M332.3,48.8c32.6,18.1,58.5,49.4,64.7,83.7c6.3,34.3-7.1,71.5-15.8,107.1c-8.6,35.7-12.6,69.7-26,108.4
+              c-13.5,38.6-36.5,81.9-68,86.9c-31.4,5-71.5-28.3-117.1-41.8c-45.7-13.6-97.1-7.5-123.9-28.3c-26.7-20.8-28.9-68.5-35-115.4
+              c-6.2-46.8-16.4-92.6-8-138c8.3-45.3,35.3-90,74.7-105s91.3-0.3,136.9,9.6C260.4,25.8,299.7,30.6,332.3,48.8z"
+              />
+            </clipPath>
+          </svg>
+
+          <picture>
+            <source
+              srcset="<%= require('./asset/img/jpg/shitty_portrait_small.jpg') %>"
+              type="image/webp"
+            />
+            <img
+              src="<%= require('./asset/img/jpg/shitty_portrait_small.webp') %>"
+              alt="Eventfrog App Screenshot - Portfolio"
+              width="285"
+              height="380"
+            />
+          </picture>
         </div>
       </div>
       <article>
+        <a class="anchor" name="leistungen"></a>
         <h2>Leistungen</h2>
         <p class="lead">
           Von der Entwicklung von Websites und mobile Apps und deren Anbindung an Backend-Systeme,
@@ -67,7 +240,7 @@
                 Ich konzipiere und programmiere Ihre neue Website und verbinde sie mit einem Content
                 Management System oder einem spezifischen Backend System.
               </p>
-              <a class="staggered-list-cell__more accordion-visible">Mehr</a>
+              <a href="#" class="staggered-list-cell__more accordion-visible">Mehr</a>
               <p class="accordion-hidden">
                 Eine informative und übersichtliche Website ist heutzutags das wichtigste
                 Marketing-Instrument für eine Firma. Sie macht das Unternehmen vertrauenswürdig und
@@ -82,7 +255,7 @@
                 Erfassung, Pflege und Analyse Ihrer Geschäftsdaten. Hier sind kaum Limits gesetzt.
                 Gerne bespreche ich Ihre Idee unverbindlich mit Ihnen.
               </p>
-              <a class="staggered-list-cell__more accordion-visible">Mehr</a>
+              <a href="#" class="staggered-list-cell__more accordion-visible">Mehr</a>
               <div class="accordion-hidden">
                 <p>
                   Um den langfristigen Erfolg Ihrer Unternehmung zu garantieren, ist die
@@ -98,12 +271,17 @@
                 </p>
               </div>
             </div>
-            <div class="staggered-list-cell">
-              <h3>Consulting</h3>
+            <div class="staggered-list-cell accordion">
+              <h3>Codebase-Audits</h3>
               <p>
-                Nicht jeder kann ich allem Profi sein. Aus diesem Grund bin ich gerne Ihr Profi für
-                alle Themen rund um die Softwareentwicklung im Webbereich. Ziehen Sie mich
-                unkompliziert auf Stundenbasis für jegliche Fragen und Analysen herbei.
+                Für Software-Teams bewerte ich diskret die Wartbarkeit und Qualität der Codebase und
+                stelle einen Bericht zusammen, was verbessert werden kann und auf welche Themen
+                künftig geachtet werden müssen.
+              </p>
+              <a href="#" class="staggered-list-cell__more accordion-visible">Mehr</a>
+              <p class="accordion-hidden">
+                Software Code kann schnell kompliziert und unübersichtlich werden, was die Qualität
+                von Software verringert und den Wartungsaufwand steigert.
               </p>
             </div>
           </div>
@@ -118,7 +296,7 @@
                 Anschliessend übernehme ich die Konzeption und Entwicklung und verbinde die App mit
                 einem neuen oder bestehenden Backend System.
               </p>
-              <a class="staggered-list-cell__more accordion-visible">Mehr</a>
+              <a href="#" class="staggered-list-cell__more accordion-visible">Mehr</a>
               <p class="accordion-hidden">
                 Smartphones sind fest in unseren Alltag integriert. Sehr viele Menschen verfügen
                 zwar noch über einen Computer, sind aber grösstenteils über ihr Smartphone mit dem
@@ -131,9 +309,9 @@
               <p>
                 Ich analysiere Ihre bestehende Website- und App-Landschaft und entwickle ein
                 massgeschneidertes Datenmanagementsystem. Ausserdem schliesse ich neue
-                Datenkonsumenten an ein bestehendes Datenmanagementsystem an.
+                Datenkonsumenten an ein bestehendes System an.
               </p>
-              <a class="staggered-list-cell__more accordion-visible">Mehr</a>
+              <a href="#" class="staggered-list-cell__more accordion-visible">Mehr</a>
               <p class="accordion-hidden">
                 Websites, Apps und Datenmanagementsysteme können Hand in Hand entwickelt und
                 miteinander verbunden werden. Die Pflege der Daten geschieht so an einem zentralen
@@ -141,17 +319,12 @@
                 angebunden.
               </p>
             </div>
-            <div class="staggered-list-cell accordion">
-              <h3>Codebase-Audits</h3>
+            <div class="staggered-list-cell">
+              <h3>Consulting</h3>
               <p>
-                Für Software-Teams bewerte ich diskret die Wartbarkeit der Codebase und stelle einen
-                Bericht zusammen, was verbessert werden kann und auf welche Themen künftig geachtet
-                werden müssen.
-              </p>
-              <a class="staggered-list-cell__more accordion-visible">Mehr</a>
-              <p class="accordion-hidden">
-                Software Code kann schnell kompliziert und unübersichtlich werden, was die Qualität
-                von Software verringert und den Wartungsaufwand steigert.
+                Nicht jeder kann ich allem Profi sein. Aus diesem Grund bin ich gerne Ihr Profi für
+                alle Themen rund um die Softwareentwicklung im Webbereich. Ziehen Sie mich
+                unkompliziert auf Stundenbasis für jegliche Fragen und Analysen hinzu.
               </p>
             </div>
           </div>
@@ -161,18 +334,19 @@
         <h2>Interesse geweckt?</h2>
         <p>Gerne können Sie mich unverbindlich kontaktieren.</p>
         <br />
-        <a href="mailto:michel@wehrli.me" class="button button--gradient button--large">
+        <a href="mailto:info@wehrli.me" class="button button--gradient button--large">
           Kontaktieren
         </a>
       </article>
       <article>
+        <a class="anchor" name="ueber-mich"></a>
         <h2>Über mich</h2>
         <p class="lead">
           Mit über 10 Jahren Erfahrung in der Entwicklung von Websites, hybrid Apps und
           individuellen Lösungen im Agentur-Bereich und der Produktentwicklung bin ich der ideale
           Partner für die Realisierung Ihrer Ideen.
         </p>
-        <h4>Eventfrog AG</h4>
+        <h3>Eventfrog AG</h3>
         <p>2020 - heute</p>
         <p>
           Bei Eventfrog bin ich als Frontend- und App-Fachverantwortlicher für die Evaluation der
@@ -185,7 +359,7 @@
           Features, standalone Anwendungen und Libraries involviert und durfte mein Wissen in der
           Frontend- und App-Entwicklung massiv erweitern.
         </p>
-        <h4>Screenlight Interactive AG</h4>
+        <h3>Screenlight Interactive AG</h3>
         <p>2014 - 2020</p>
         <p>
           Bei der Screenlight Interactive AG war ich während sechs Jahren in die Entwicklung und
@@ -194,7 +368,7 @@
           von namhaften Schweizer Kunden bis zur Entwicklung von massgeschneiderten Webanwendungen
           und mobile Apps war alles dabei.
         </p>
-        <h4>Private Projekte</h4>
+        <h3>Private Projekte</h3>
         <p>2012 - heute</p>
         <p>
           Über die Jahre entwickelte ich zahllose private Software-Projekte, sowie im Auftrag als
@@ -206,10 +380,11 @@
         </p>
       </article>
       <article>
+        <a class="anchor" name="technologie"></a>
         <h2>Technologie</h2>
         <p class="lead">
           Bei der Entwicklung von Software setze ich grösstenteils auf Technologien denen JavaScript
-          zugrunde liegt. Vorteilhaft ist das grosse Ökosystem und die Reduzierung auf eine
+          zugrunde liegt. Vorteilhaft ist das grosse Ökosystem und die Reduzierung auf eine einzige
           Programmiersprache für die gesamte Codebase.
         </p>
         <br /><br />
@@ -223,57 +398,37 @@
                 mit dem man interagieren kann.
               </p>
               <p>
-                Hier setze ich auf das bewährte Framework "Angular". Angular ist weit verbreitet und
-                profitiert von diesem riesigen Ökosystem welches darum existiert. Es wird
-                kontinuierlich gewartet und erhält Updates und neue Versionen.
+                Hier setze ich auf Angular und TypeScript. Angular ist weit verbreitet und
+                profitiert von einem riesigen Ökosystem. Es wird kontinuierlich verbessert und
+                erhält Updates und neue Versionen.
               </p>
-              <p>
-                Falls das Projekt nach einer "leichteren" Architektur verlangt, benutze ich
-                Typescript, welches als Superset von JavaScript nach JavaScript kompiliert wird.
-              </p>
-              <p>Weitere verwendete Techonologien im Frontend sind HTML5 und SASS.</p>
             </div>
-            <div class="staggered-list-cell">
-              <h3>Apps</h3>
-              <p>
-                Apps können auf verschiedene Arten entwickelt werden. Meine Herangehensweise ist
-                hier wieder, Apps in JavaScript zu entwickeln. Technologien wie NativeScript,
-                ReactNative oder Ionic Capacitor kommen zum Einsatz.
-              </p>
-              <p>
-                Dieser Weg ist enorm vorteilhaft, da man für die beiden populärsten Betriebssysteme
-                iOS und Android nur eine einzige App schreibt und sich so einen haufen Aufwand und
-                Geld spart.
-              </p>
-              <p>Ebenfalls wie im Frontend nutze ich für Apps HTML5 und SASS.</p>
-            </div>
-          </div>
-          <div class="staggered-list__col">
             <div class="staggered-list-cell">
               <h3>Backend</h3>
               <p>
                 Unter dem Backend versteht man als Gegensatz zum Frontend alle Teile einer
-                Webanwendung, die auf einem Server ausgeführt werden und auch laufen, wenn der
-                Benutzer nicht mit der Software interagiert.
+                Webanwendung, die auf einem Server ausgeführt.
               </p>
               <p>
                 Auch hier verwende ich TypeScript als Programmiersprache, jedoch in Kombination mit
                 Node.JS. Node.JS kann JavaScript wie ein Browser ausführen, läuft jedoch als Service
-                auf einem Server, wo es HTTP-Requests verarbeitet und beantwortet.
+                auf einem Server, wo es beispielsweise HTTP-Requests verarbeitet und beantwortet.
               </p>
               <p>Um Datenbanken anzubinden vertraue ich auf ORMs wie MikroORM oder TypeORM.</p>
             </div>
+          </div>
+          <div class="staggered-list__col">
             <div class="staggered-list-cell">
-              <h3>Datenbanken</h3>
+              <h3>Apps</h3>
               <p>
-                Ich arbeite am liebsten mit relationalen Datenbanksystemen wie SQL, da
-                Datenabhängigkeiten hier bereits in der Datenbank-Struktur abgebildet werden können
-                und nicht auf Software-Ebene gehandhabt werden müssen. MariaDB, SQLite, MySQL,
-                PostgreSQL sind mögliche Datenbanksysteme.
+                Apps können auf verschiedene Arten entwickelt werden. Meine Herangehensweise ist es,
+                Apps in JavaScript zu entwickeln. Technologien wie NativeScript, ReactNative oder
+                Ionic Capacitor kommen zum Einsatz.
               </p>
               <p>
-                Aber auch NoSQL Systeme wie MongoDB oder in-memory Datenbanken wie Redis kommen zum
-                Einsatz, wenn es der Use-Case verlangt.
+                Der grosse Vorteil von sogenannten hybrid Apps ist es, dass man für die beiden
+                populärsten Betriebssysteme iOS und Android nur eine einzige App schreibt, die dann
+                auf beiden System ausgeführt werden kann.
               </p>
             </div>
             <div class="staggered-list-cell">
@@ -283,125 +438,20 @@
                 Linux als Betriebssystem.
               </p>
             </div>
+            <div class="staggered-list-cell">
+              <h3>Datenbank</h3>
+              <p>
+                Am liebsten arbeite ich mit relationalen Datenbanksystemen, da Datenabhängigkeiten
+                in der Datenbank-Struktur abgebildet werden können.
+              </p>
+              <p>
+                MariaDB, SQLite, MySQL, PostgreSQL sind mögliche Datenbanksysteme, aber auch NoSQL
+                Systeme wie MongoDB oder in-memory Datenbanken wie Redis kommen ja nach Use-Case zum
+                Einsatz.
+              </p>
+            </div>
           </div>
         </div>
-        <article>
-          <h2>Portfolio</h2>
-          <p class="lead">Hier finden Sie eine Selektion meiner Projekte.</p>
-          <br />
-          <br />
-          <div class="portfolio">
-            <div class="portfolio__item">
-              <div class="portfolio__item__image">
-                <img src="<%= require('./asset/img/png/portfolio/datapot.png') %>" lazy="true" />
-              </div>
-              <div class="portfolio__item__inner">
-                <p class="portfolio__item__inner__title">Datapot CRM</p>
-                <p class="portfolio__item__inner__text">
-                  Das Datapot CRM ist eine massgeschneiderte CRM-Lösung, welche ab dem Jahr 2017 bis
-                  heute für die 3pmw gmbh entwickelt und gewartet wird. Das CRM bietet die
-                  Möglichkeit, Kontakt-, Firmen- und diverse Stammdaten zu erfassen, ins O365 zu
-                  exportieren und auf verschiedene weitere Weisen weiter zu verarbeiten.
-                </p>
-                <p>
-                  Zur Anwendung kamen bei diesem Projekt SQLite, MikroORM, Express, Node.JS,
-                  Angular, HTML5 und SASS.
-                </p>
-              </div>
-            </div>
-            <div class="portfolio__item">
-              <div class="portfolio__item__image">
-                <img
-                  src="<%= require('./asset/img/png/portfolio/affolterarchitekten.png') %>"
-                  lazy="true"
-                />
-              </div>
-              <div class="portfolio__item__inner">
-                <p class="portfolio__item__inner__title">Affolter Architekten</p>
-                <p class="portfolio__item__inner__text">
-                  Diese Corporate-Website wurde im Jahr 2022 entwickelt, um die junge Firma optimal
-                  im Internet zu vertreten. Es handelt sich um einen One-Pager mit einer
-                  massgeschneiderten CMS Lösung in PHP, TypeScript, HTML5 und SASS.
-                </p>
-                <a
-                  href="https://www.affolterarchitekten.ch"
-                  target="_blank"
-                  class="portfolio__item__inner__visit-link"
-                >
-                  Besuchen
-                </a>
-              </div>
-            </div>
-            <div class="portfolio__item">
-              <div class="portfolio__item__image">
-                <img src="<%= require('./asset/img/png/portfolio/mageba.png') %>" lazy="true" />
-              </div>
-              <div class="portfolio__item__inner">
-                <p class="portfolio__item__inner__title">Mageba Global</p>
-                <p class="portfolio__item__inner__text">
-                  Den Relaunch der Corporate-Website von Mageba wurde im Jahr 2020 abgeschlossen.
-                  Die Website beinhaltet eine Projekt-, Referenz- und Dokumenten-Verwaltung, welche
-                  im Frontend abgebildet wird. Sowohl Backend- als auch Frontend-Entwicklung sowie
-                  das Key-Account-Management wurde von mir durchgeführt.
-                </p>
-                <p>
-                  Dieses Projekt wurde während meiner Anstellung bei der Screenlight Interactive AG
-                  durchgeführt.
-                </p>
-                <a
-                  href="https://www.mageba.ch"
-                  target="_blank"
-                  class="portfolio__item__inner__visit-link"
-                >
-                  Besuchen
-                </a>
-              </div>
-            </div>
-            <div class="portfolio__item">
-              <div class="portfolio__item__image">
-                <img src="<%= require('./asset/img/png/portfolio/3pmw.png') %>" lazy="true" />
-              </div>
-              <div class="portfolio__item__inner">
-                <p class="portfolio__item__inner__title">3pmw projekte & management gmbh</p>
-                <p class="portfolio__item__inner__text">
-                  Diese Corporate-Website für die 3pmw gmbh wurde im Jahr 2017 abgeschlossen und
-                  bietet mit Wordpress als CMS alle Funktionen einer modernen CMS Software.
-                </p>
-                <a
-                  href="https://www.3pmw.ch"
-                  target="_blank"
-                  class="portfolio__item__inner__visit-link"
-                >
-                  Besuchen
-                </a>
-              </div>
-            </div>
-            <div class="portfolio__item">
-              <div class="portfolio__item__image">
-                <img src="<%= require('./asset/img/png/portfolio/genderai.png') %>" lazy="true" />
-              </div>
-              <div class="portfolio__item__inner">
-                <p class="portfolio__item__inner__title">genderai.com</p>
-                <p class="portfolio__item__inner__text">
-                  Das genderAI Web-Tool bietet die Möglichkeit, Namen in ihr entsprechendes
-                  Geschlecht umzuwandeln. Dies wird durch AI ermöglicht.
-                </p>
-                <p>
-                  Dieses Projekt entstand 2019 und wurde seither ein paar mal neu geschrieben und in
-                  einen anderen Stack transportiert.
-                </p>
-                <p>Verwendet wird Synaptic, Node.JS mit Express, Angular, HTML5 und SASS.</p>
-                <a
-                  href="https://www.genderai.com"
-                  target="_blank"
-                  class="portfolio__item__inner__visit-link"
-                >
-                  Besuchen
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
 
         <!--<div class="quote">
           <p class="quote__text">
@@ -411,15 +461,438 @@
           <p class="quote__name">Atwood's Law, Jeff Atwood</p>
         </div>-->
       </article>
+      <article>
+        <a class="anchor" name="portfolio"></a>
+        <h2>Portfolio</h2>
+        <p class="lead">Hier finden Sie eine Selektion meiner Projekte.</p>
+        <br />
+        <br />
+
+        <div class="staggered-list">
+          <div class="staggered-list__col">
+            <div class="staggered-list-cell portfolio-item">
+              <div class="portfolio-item__image">
+                <picture>
+                  <source
+                    srcset="<%= require('./asset/img/png/portfolio/datapot_small.png') %>"
+                    type="image/webp"
+                  />
+                  <img
+                    src="<%= require('./asset/img/png/portfolio/datapot_small.webp') %>"
+                    alt="Datapot CRM Screenshot - Portfolio"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="portfolio-item__inner">
+                <p class="portfolio-item__inner__title">Datapot CRM</p>
+                <p>
+                  Das Datapot CRM ist eine massgeschneiderte CRM-Lösung, welche ab dem Jahr 2017 bis
+                  heute für die 3pmw gmbh entwickelt und gewartet wird. Das CRM bietet die
+                  Möglichkeit, Kontakt-, Firmen- und diverse Stammdaten zu erfassen, ins O365 zu
+                  exportieren und auf verschiedene weitere Weisen weiter zu verarbeiten.
+                </p>
+                <p>
+                  Zur Anwendung kamen bei diesem Projekt SQLite, MikroORM, Express, Node.JS,
+                  Angular, HTML5 und SASS.
+                </p>
+                <div class="portfolio-item__inner__stack-icons">
+                  <img
+                    src="<%= require('./asset/img/svg/tech/sqlite.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="SQLite Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/mikroorm.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="MikroORM Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/nodejs.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="Node.JS Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/angular.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="Angular Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/ts.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="TypeScript Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/html5.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="HTML5 Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/css3.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="CSS3 Icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="staggered-list-cell portfolio-item portfolio-item--horizontal">
+              <div class="portfolio-item__image">
+                <picture>
+                  <source
+                    srcset="<%= require('./asset/img/png/portfolio/efrg-app_small.png') %>"
+                    type="image/webp"
+                  />
+                  <img
+                    src="<%= require('./asset/img/png/portfolio/efrg-app_small.webp') %>"
+                    alt="Eventfrog App Screenshot - Portfolio"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="portfolio-item__inner">
+                <p class="portfolio-item__inner__title">Eventfrog Ticketkäufer App</p>
+                <p>
+                  Die Eventfrog Ticketkäufer App ist das Portal für die Eventfrog-Kunden. Hier
+                  kommen die User zu Ihren Tickets, können nach Events suchen und weitere Tickets
+                  kaufen.
+                </p>
+                <p>
+                  Die App habe ich für Eventfrog komplett überarbeitet und auf den aktuellsten Stand
+                  der Technik gebracht.
+                </p>
+                <p>
+                  Zum Einsatz kommen Ionic Capacitor, Angular, HTML5 und SASS. Die
+                  Backend-Kommunikation läuft via REST-Schnittstellen.
+                </p>
+                <div class="portfolio-item__inner__stack-icons">
+                  <img
+                    src="<%= require('./asset/img/svg/tech/ionic-capacitor.svg') %>"
+                    loading="lazy"
+                    width="20"
+                    height="20"
+                    alt="Ionic Capacitor Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/angular.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="Angular Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/ts.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="TypeScript Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/html5.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="HTML5 Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/css3.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="CSS3 Icon"
+                  />
+                </div>
+                <a
+                  href="https://eventfrog.net/efrg-app.html"
+                  target="_blank"
+                  class="portfolio-item__inner__visit-link"
+                >
+                  Besuchen
+                </a>
+              </div>
+            </div>
+            <div class="staggered-list-cell portfolio-item">
+              <div class="portfolio-item__image">
+                <picture>
+                  <source
+                    srcset="<%= require('./asset/img/png/portfolio/mageba_small.png') %>"
+                    type="image/webp"
+                  />
+                  <img
+                    src="<%= require('./asset/img/png/portfolio/mageba_small.webp') %>"
+                    alt="Mageba Screenshot - Portfolio"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="portfolio-item__inner">
+                <p class="portfolio-item__inner__title">Mageba Global</p>
+                <p>
+                  Den Relaunch der Corporate-Website von Mageba wurde im Jahr 2020 abgeschlossen.
+                  Die Website beinhaltet eine Projekt-, Referenz- und Dokumenten-Verwaltung, welche
+                  im Frontend abgebildet wird. Sowohl Backend- als auch Frontend-Entwicklung sowie
+                  das Key-Account-Management wurde von mir durchgeführt.
+                </p>
+                <p>
+                  Dieses Projekt wurde während meiner Anstellung bei der Screenlight Interactive AG
+                  durchgeführt.
+                </p>
+                <div class="portfolio-item__inner__stack-icons">
+                  <img
+                    src="<%= require('./asset/img/svg/tech/php.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="PHP Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/js.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="JavaScript Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/html5.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="HTML5 Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/css3.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="CSS3 Icon"
+                  />
+                </div>
+                <a
+                  href="https://www.mageba.ch"
+                  target="_blank"
+                  class="portfolio-item__inner__visit-link"
+                >
+                  Besuchen
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="staggered-list__col">
+            <div class="staggered-list-cell portfolio-item">
+              <div class="portfolio-item__image">
+                <picture>
+                  <source
+                    srcset="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.png') %>"
+                    type="image/webp"
+                  />
+                  <img
+                    src="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.webp') %>"
+                    alt="Affolter Architekten Screenshot - Portfolio"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="portfolio-item__inner">
+                <p class="portfolio-item__inner__title">Affolter Architekten</p>
+                <p>
+                  Diese Corporate-Website wurde im Jahr 2022 entwickelt, um die junge Firma optimal
+                  im Internet zu vertreten. Es handelt sich um einen One-Pager mit einer
+                  massgeschneiderten CMS Lösung in PHP, TypeScript, HTML5 und SASS.
+                </p>
+                <div class="portfolio-item__inner__stack-icons">
+                  <img
+                    src="<%= require('./asset/img/svg/tech/php.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="PHP Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/js.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="JavaScript Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/html5.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="HTML5 Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/css3.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="CSS3 Icon"
+                  />
+                </div>
+                <a
+                  href="https://www.affolterarchitekten.ch"
+                  target="_blank"
+                  class="portfolio-item__inner__visit-link"
+                >
+                  Besuchen
+                </a>
+              </div>
+            </div>
+            <div class="staggered-list-cell portfolio-item">
+              <div class="portfolio-item__image">
+                <picture>
+                  <source
+                    srcset="<%= require('./asset/img/png/portfolio/3pmw_small.png') %>"
+                    type="image/webp"
+                  />
+                  <img
+                    src="<%= require('./asset/img/png/portfolio/3pmw_small.webp') %>"
+                    alt="3pmw Screenshot - Portfolio"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="portfolio-item__inner">
+                <p class="portfolio-item__inner__title">3pmw projekte & management gmbh</p>
+                <p>
+                  Diese Corporate-Website für die 3pmw gmbh wurde im Jahr 2017 abgeschlossen und
+                  bietet mit Wordpress als CMS alle Funktionen einer modernen CMS Software.
+                </p>
+                <div class="portfolio-item__inner__stack-icons">
+                  <img
+                    src="<%= require('./asset/img/svg/tech/wordpress.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="Wordpress Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/js.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="JavaScript Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/html5.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="HTML5 Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/css3.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="CSS3 Icon"
+                  />
+                </div>
+                <a
+                  href="https://www.3pmw.ch"
+                  target="_blank"
+                  class="portfolio-item__inner__visit-link"
+                >
+                  Besuchen
+                </a>
+              </div>
+            </div>
+            <div class="staggered-list-cell portfolio-item">
+              <div class="portfolio-item__image">
+                <picture>
+                  <source
+                    srcset="<%= require('./asset/img/png/portfolio/genderai_small.png') %>"
+                    type="image/webp"
+                  />
+                  <img
+                    src="<%= require('./asset/img/png/portfolio/genderai_small.webp') %>"
+                    alt="genderai Screenshot - Portfolio"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="portfolio-item__inner">
+                <p class="portfolio-item__inner__title">genderai.com</p>
+                <p>
+                  Das genderAI Web-Tool bietet die Möglichkeit, Namen in ihr entsprechendes
+                  Geschlecht umzuwandeln. Dies wird durch AI ermöglicht.
+                </p>
+                <p>
+                  Dieses Projekt entstand 2019 und wurde seither ein paar mal neu geschrieben und in
+                  einen anderen Stack transportiert.
+                </p>
+                <p>Verwendet wird Synaptic, Node.JS mit Express, Angular, HTML5 und SASS.</p>
+
+                <div class="portfolio-item__inner__stack-icons">
+                  <img
+                    src="<%= require('./asset/img/svg/tech/nodejs.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="Node.JS Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/angular.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="Angular Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/ts.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="TypeScript Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/html5.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="HTML5 Icon"
+                  />
+                  <img
+                    src="<%= require('./asset/img/svg/tech/css3.svg') %>"
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    alt="CSS3 Icon"
+                  />
+                </div>
+                <a
+                  href="https://www.genderai.com"
+                  target="_blank"
+                  class="portfolio-item__inner__visit-link"
+                >
+                  Besuchen
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
       <article class="article--centered article--max-width">
         <h2>Noch nicht überzeugt?</h2>
         <p>
           Gerne kann ich Ihnen mehr Informationen zu meiner Person oder meinem Portfolio zukommen
           lassen.
         </p>
-        <p>Unkompliziert zum Kaffee geht natürlich auch! ☕</p>
         <br />
-        <a href="mailto:michel@wehrli.me" class="button button--gradient button--large">
+        <a href="mailto:info@wehrli.me" class="button button--gradient button--large">
           Überzeugen lassen
         </a>
       </article>
@@ -427,31 +900,27 @@
     <footer>
       <div class="footer__inner">
         <div class="footer__inner__left">
-          <p class="threepmw">
-            Eine Unternehmung der
-            <a href="https://3pmw.ch" target="_blank" class="threepmw">3pmw gmbh</a>.
-          </p>
-          <br />
           <p>
-            3pmw projekte & management GmbH<br />
-            z.Hd. Michel Wehrli<br />
-            Grenzweg 1<br />
+            Michel Wehrli<br />
+            Gysulaweg 7<br />
             5033 Buchs
           </p>
-          <p>
-            <a href="mailto:michel@wehrli.me">info@wehrli.me</a><br />
-            <a href="tel:+41 76 345 63 46">+41 76 345 63 46</a>
-          </p>
+          <p><a href="mailto:info@wehrli.me">info@wehrli.me</a><br /></p>
         </div>
         <div class="footer__inner__center">
-          <img src="<%= require('./asset/img/svg/logo.svg') %>" alt="wehrli.me Logo" />
+          <img
+            src="<%= require('./asset/img/svg/logo.svg') %>"
+            width="140"
+            height="76"
+            alt="wehrli.me Logo"
+          />
         </div>
         <div class="footer__inner__right">
           <div></div>
           <div>
             <p>
-              <a href="#">Impressum</a><br />
-              <a href="#">Datenschutz</a>
+              <a href="/impressum">Impressum</a><br />
+              <a href="/datenschutz">Datenschutz</a>
             </p>
             <br />
             <p>&copy; 2022 wehrli.me<br /></p>

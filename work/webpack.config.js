@@ -32,7 +32,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|svg)$/i,
+        test: /\.(png|jpg|svg|webp)$/i,
         type: 'asset/resource',
       },
       {

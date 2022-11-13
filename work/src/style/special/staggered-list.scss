@@ -3,6 +3,10 @@
   flex-direction: row;
   gap: space(6);
 
+  @media only screen and (max-width: 850px) {
+    flex-direction: column;
+  }
+
   &__col {
     flex: 1;
     display: flex;
@@ -17,14 +21,29 @@
   background-color: color(sky, lighter);
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    width: 120px;
+    right: space(3);
+    top: space(3);
+    opacity: 0.03;
+    z-index: 0;
+    transform: rotate(15deg);
+  }
+
+  h3 {
+    margin-bottom: space(2);
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+  }
 
   &__more {
     align-self: flex-end;
-    color: color(ink, lightest);
     font-size: 18px;
-
-    &:after {
-      border-color: color(sky, dark);
-    }
   }
 }
