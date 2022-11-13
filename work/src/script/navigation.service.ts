@@ -1,5 +1,4 @@
 export class NavigationService {
-  private readonly DOMAIN = 'https://wehrli.me'
   private readonly POSSIBLE_PAGES = ['default', 'impressum', 'datenschutz']
 
   private readonly navE: HTMLDivElement
@@ -18,9 +17,10 @@ export class NavigationService {
 
     window.addEventListener('scroll', () => this.handleNearestAnchor())
 
-    let page = location.href.split(`${this.DOMAIN}/`)[1]
+    const domain = `${location.protocol}//${location.host}`
+    let page = location.href.split(`${domain}/`)[1]
     if (page && !this.POSSIBLE_PAGES.includes(page)) {
-      location.href = this.DOMAIN
+      location.href = domain
     }
     if (!page || page.startsWith('#')) {
       page = 'default'
