@@ -3,6 +3,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV == 'production'
 
@@ -24,6 +25,10 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/index.html'),
       favicon: path.resolve(__dirname, './src/favicon.ico'),
+    }),
+    new CopyPlugin({
+      patterns: [{ from: './src/sitemap.xml', to: '../root/sitemap.xml' }],
+      patterns: [{ from: './src/robots.txt', to: '../root/robots.txt' }],
     }),
   ],
   resolve: {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Spezialsoftware fürs Internet | wehrli.me</title>
+    <title>Spezialsoftware fürs Internet | Michel Wehrli</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta class="anchor" name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +10,41 @@
       name="description"
       content="Entwicklung und Konzeption von Spezialsoftware fürs Internet für Unternehmen in der Schweiz."
     />
+    <script type="text/javascript">
+      ;(window.heap = window.heap || []),
+        (heap.load = function (e, t) {
+          ;(window.heap.appid = e), (window.heap.config = t = t || {})
+          var r = document.createElement('script')
+          ;(r.type = 'text/javascript'),
+            (r.async = !0),
+            (r.src = 'https://cdn.heapanalytics.com/js/heap-' + e + '.js')
+          var a = document.getElementsByTagName('script')[0]
+          a.parentNode.insertBefore(r, a)
+          for (
+            var n = function (e) {
+                return function () {
+                  heap.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+              },
+              p = [
+                'addEventProperties',
+                'addUserProperties',
+                'clearEventProperties',
+                'identify',
+                'resetIdentity',
+                'removeEventProperty',
+                'setEventProperties',
+                'track',
+                'unsetEventProperty',
+              ],
+              o = 0;
+            o < p.length;
+            o++
+          )
+            heap[p[o]] = n(p[o])
+        })
+      heap.load('6937986')
+    </script>
   </head>
   <body>
     <a class="anchor" name="start"></a>
@@ -24,9 +59,7 @@
           />
         </div>
         <nav data-page="default" class="page header__inner__nav">
-          <a class="header__inner__nav__item header__inner__nav__item--active" href="#start">
-            Start
-          </a>
+          <a class="header__inner__nav__item" href="#start">Start</a>
           <a class="header__inner__nav__item" href="#leistungen">Leistungen</a>
           <a class="header__inner__nav__item" href="#ueber-mich">Über mich</a>
           <a class="header__inner__nav__item" href="#technologie">Technologie</a>
@@ -42,7 +75,7 @@
     </header>
     <section class="page" data-page="impressum">
       <article class="article--standalone">
-        <h2>Impressum</h2>
+        <h1>Impressum</h1>
         <h3>Postadresse</h3>
         <p>Michel Wehrli<br />Gysulaweg 7<br />5034 Suhr</p>
         <h3>Kontakt</h3>
@@ -51,7 +84,7 @@
     </section>
     <section class="page" data-page="datenschutz">
       <article class="article--standalone">
-        <h2>Datenschutz</h2>
+        <h1>Datenschutz</h1>
 
         <p class="lead">
           Diese Datenschutzerklärung und Nutzungsbestimmungen finden auf allen von mir angebotenen
@@ -216,7 +249,7 @@
           <picture>
             <source
               srcset="<%= require('./asset/img/jpg/shitty_portrait_small.jpg') %>"
-              type="image/webp"
+              type="image/png"
             />
             <img
               src="<%= require('./asset/img/jpg/shitty_portrait_small.webp') %>"
@@ -330,9 +363,9 @@
         <a class="anchor" name="ueber-mich"></a>
         <h2>Über mich</h2>
         <p class="lead">
-          Mit über 10 Jahren Erfahrung in der Entwicklung von Websites, hybrid Apps und
-          individuellen Lösungen im Agentur-Bereich und der Produktentwicklung bin ich der ideale
-          Partner für die Realisierung Ihrer Ideen.
+          Mit 10 Jahren Erfahrung in der Entwicklung von Websites, hybrid Apps und individuellen
+          Lösungen im Agentur-Bereich und der Produktentwicklung bin ich der ideale Partner für die
+          Realisierung Ihrer Ideen.
         </p>
         <h3>Eventfrog AG</h3>
         <p>2020 - heute</p>
@@ -463,7 +496,7 @@
                 <picture>
                   <source
                     srcset="<%= require('./asset/img/png/portfolio/datapot_small.png') %>"
-                    type="image/webp"
+                    type="image/png"
                   />
                   <img
                     src="<%= require('./asset/img/png/portfolio/datapot_small.webp') %>"
@@ -542,7 +575,7 @@
                 <picture>
                   <source
                     srcset="<%= require('./asset/img/png/portfolio/efrg-app_small.png') %>"
-                    type="image/webp"
+                    type="image/png"
                   />
                   <img
                     src="<%= require('./asset/img/png/portfolio/efrg-app_small.webp') %>"
@@ -617,7 +650,7 @@
                 <picture>
                   <source
                     srcset="<%= require('./asset/img/png/portfolio/mageba_small.png') %>"
-                    type="image/webp"
+                    type="image/png"
                   />
                   <img
                     src="<%= require('./asset/img/png/portfolio/mageba_small.webp') %>"
@@ -684,7 +717,7 @@
                 <picture>
                   <source
                     srcset="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.png') %>"
-                    type="image/webp"
+                    type="image/png"
                   />
                   <img
                     src="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.webp') %>"
@@ -744,7 +777,7 @@
                 <picture>
                   <source
                     srcset="<%= require('./asset/img/png/portfolio/3pmw_small.png') %>"
-                    type="image/webp"
+                    type="image/png"
                   />
                   <img
                     src="<%= require('./asset/img/png/portfolio/3pmw_small.webp') %>"
@@ -803,7 +836,7 @@
                 <picture>
                   <source
                     srcset="<%= require('./asset/img/png/portfolio/genderai_small.png') %>"
-                    type="image/webp"
+                    type="image/png"
                   />
                   <img
                     src="<%= require('./asset/img/png/portfolio/genderai_small.webp') %>"
@@ -907,7 +940,9 @@
           <div></div>
           <div>
             <p>
-              <a href="/impressum">Impressum</a><br />
+              <a href="/impressum">Impressum</a>
+            </p>
+            <p>
               <a href="/datenschutz">Datenschutz</a>
             </p>
             <br />

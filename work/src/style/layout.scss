@@ -55,6 +55,8 @@ header {
     max-width: calc(1200px + calc(#{space(5)} * 2));
 
     &__logo {
+      pointer-events: none;
+      user-select: none;
       position: relative;
       height: 50px;
       transform-origin: center;
@@ -177,8 +179,10 @@ footer {
     }
 
     &__center {
+      pointer-events: none;
       align-items: center;
       justify-content: center;
+      user-select: none;
 
       img {
         width: 140px;
