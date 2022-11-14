@@ -1,15 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de-CH">
   <head>
     <title>Spezialsoftware fürs Internet | Michel Wehrli</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta class="anchor" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Spezialsoftware fürs Internet | Michel Wehrli" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      class="anchor"
       name="description"
       content="Entwicklung und Konzeption von Spezialsoftware fürs Internet für Unternehmen in der Schweiz."
     />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="language" content="de-CH" />
+    <meta name="author" content="Michel Wehrli" />
+    <meta name="designer" content="Michel Wehrli" />
+    <meta name="publisher" content="Michel Wehrli" />
+    <meta name="web_author" content="Michel Wehrli" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="web" />
+    <meta name="rating" content="general" />
+    <meta name="rating" content="safe for kids" />
+    <meta name="reply-to" content="info@wehrli.me" />
+    <meta name="city" content="Aarau" />
+    <meta name="country" content="CH" />
+
+    <link rel="canonical" href="https://www.wehrli.me" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "https://www.wehrli.me",
+        "name": "wehrli.me",
+        "address": {
+          "addressCountry": "Switzerland",
+          "addressRegion": "Aargau",
+          "postalCode": "5034",
+          "streetAddress": "Gysulaweg 7"
+        },
+        "areaServed": "Switzerland",
+        "email": "info@wehrli.me",
+        "founder": {
+          "name": "Michel Wehrli"
+        },
+        "knowsAbout": "Software-Entwicklung, Software-Consulting",
+        "logo": "https://www.wehrli.me/<%= require('./asset/img/png/logo_gradient.png') %>",
+        "image": "https://www.wehrli.me/<%= require('./asset/img/png/logo_gradient.png') %>",
+        "slogan": "Spezialsoftware fürs Internet"
+      }
+    </script>
+
     <script type="text/javascript">
       ;(window.heap = window.heap || []),
         (heap.load = function (e, t) {
@@ -120,8 +159,8 @@
         <h3>Google Analytics (Benutzeranalyse)</h3>
         <p>
           Unsere Webseite benutzt Google Analytics, einen Webanalysedienst der Google Inc., 1600
-          Amphitheatre Parkway, Mountain View, CA 94043, USA (”Google“). Google Analytics verwendet
-          sog. ”Cookies“, Textdateien, die auf Ihrem Computer gespeichert werden und die eine
+          Amphitheatre Parkway, Mountain View, CA 94043, USA ("Google“). Google Analytics verwendet
+          sog. "Cookies“, Textdateien, die auf Ihrem Computer gespeichert werden und die eine
           Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie erzeugten
           Informationen über Ihre Benutzung dieser Webseite (einschliesslich Ihrer IP-Adresse) wird
           an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese
@@ -211,11 +250,6 @@
     <section class="page" data-page="default">
       <div class="special-intro">
         <div class="special-intro__text">
-          <!--<p class="special-intro__text__inner">
-            Ich entwickle verbundene<br />
-            Web-Apps, hybrid Apps und<br />
-            Websites.
-          </p>-->
           <h1 class="special-intro__text__inner">
             Ich entwickle <br />
             Spezialsoftware fürs Internet
@@ -248,11 +282,11 @@
 
           <picture>
             <source
-              srcset="<%= require('./asset/img/jpg/shitty_portrait_small.jpg') %>"
-              type="image/png"
+              srcset="<%= require('./asset/img/jpg/shitty_portrait_small.webp') %>"
+              type="image/webp"
             />
             <img
-              src="<%= require('./asset/img/jpg/shitty_portrait_small.webp') %>"
+              src="<%= require('./asset/img/jpg/shitty_portrait_small.jpg') %>"
               alt="Eventfrog App Screenshot - Portfolio"
               width="285"
               height="380"
@@ -264,9 +298,9 @@
         <a class="anchor" name="leistungen"></a>
         <h2>Leistungen</h2>
         <p class="lead">
-          Von der Entwicklung von Websites und mobile Apps und deren Anbindung an Backend-Systeme,
-          über die Programmierung von massgeschneiderten Verwaltungssystemen, bis zum Consulting und
-          Code-Auditing wage ich mich an jedes Problem heran.
+          Von der Programmierung von massgeschneiderten Verwaltungssystemen, über die Entwicklung
+          von Websites und mobile Apps und deren Anbindung an Backend-Systeme, bis zum Consulting
+          und Code-Auditing wage ich mich an jedes Problem heran.
         </p>
         <br /><br />
         <div class="staggered-list">
@@ -280,17 +314,21 @@
               </p>
             </div>
             <div class="staggered-list-cell accordion">
-              <h3>Websites</h3>
+              <h3>Mobile Apps</h3>
               <p>
-                Ich konzipiere und programmiere Ihre neue Website und verbinde sie mit einem Content
-                Management System oder einem spezifischen Backend System.
+                Gerne berate ich Sie über die Möglichkeiten einer mobile App und wenn es darum geht,
+                eine App in Ihre Prozesse einzubinden.
+              </p>
+              <p>
+                Anschliessend übernehme ich die Konzeption und Entwicklung und verbinde die App mit
+                einem neuen oder bestehenden Verwaltung-System.
               </p>
               <a href="#" class="staggered-list-cell__more accordion-visible">Mehr</a>
               <p class="accordion-hidden">
-                Eine informative und übersichtliche Website ist heutzutags das wichtigste
-                Marketing-Instrument für eine Firma. Sie macht das Unternehmen vertrauenswürdig und
-                hilft Kunden bei der Evaluation von Aufträgen. Je professioneller die Website, desto
-                einfacher ist es, Leads zu generieren und an Aufträge zu kommen.
+                Smartphones sind fest in unseren Alltag integriert. Sehr viele Menschen verfügen
+                zwar noch über einen Computer, sind aber grösstenteils über ihr Smartphone mit dem
+                Internet verbunden. Als Unternehmen über eine mobile App zu verfügen, mit der Sie
+                ihre Kunden direkt erreichen, ist daher äusserst wertvoll.
               </p>
             </div>
             <div class="staggered-list-cell accordion">
@@ -309,21 +347,17 @@
           </div>
           <div class="staggered-list__col">
             <div class="staggered-list-cell accordion">
-              <h3>Mobile Apps</h3>
+              <h3>Websites</h3>
               <p>
-                Gerne berate ich Sie über die Möglichkeiten einer mobile App und wenn es darum geht,
-                eine App in Ihre Prozesse einzubinden.
-              </p>
-              <p>
-                Anschliessend übernehme ich die Konzeption und Entwicklung und verbinde die App mit
-                einem neuen oder bestehenden Verwaltung-System.
+                Ich konzipiere und programmiere Ihre neue Website und verbinde sie mit einem Content
+                Management System oder einem spezifischen Backend System.
               </p>
               <a href="#" class="staggered-list-cell__more accordion-visible">Mehr</a>
               <p class="accordion-hidden">
-                Smartphones sind fest in unseren Alltag integriert. Sehr viele Menschen verfügen
-                zwar noch über einen Computer, sind aber grösstenteils über ihr Smartphone mit dem
-                Internet verbunden. Als Unternehmen über eine mobile App zu verfügen, mit der Sie
-                ihre Kunden direkt erreichen, ist daher äusserst wertvoll.
+                Eine informative und übersichtliche Website ist heutzutags das wichtigste
+                Marketing-Instrument für eine Firma. Sie macht das Unternehmen vertrauenswürdig und
+                hilft Kunden bei der Evaluation von Aufträgen. Je professioneller die Website, desto
+                einfacher ist es, Leads zu generieren und an Aufträge zu kommen.
               </p>
             </div>
             <div class="staggered-list-cell accordion">
@@ -396,8 +430,13 @@
           auch nur für mich selbst. An manchen Projekten verdiente ich Geld und manche ziehen jeden
           Tag weltweite Besucher an, die meisten sind jedoch auf dem Code-Friedhof gelandet. Ich bin
           überzeugt, dass genau diese "Fails" mich zu einem erfahrenen Entwickler gemacht haben, der
-          mit diversen Technologien umzugehen weiss und den so schnell nichts abschreckt. Ein Auszug
-          meiner privaten Projekte findet sich im Portfolio.
+          mit diversen Technologien umzugehen weiss und den so schnell nichts abschreckt.
+        </p>
+        <h3>Ausbildung zum Wirtschaftsinformatiker</h3>
+        <p>2016 - 2019</p>
+        <p>
+          Weiterbildung zum dipl. Wirtschaftsinformatiker HF an der IFA - Die Höhere Fachschule der
+          Digitalen Wirtschaft.
         </p>
       </article>
       <article>
@@ -415,7 +454,7 @@
               <h3>Frontend</h3>
               <p>
                 Unter dem Frontend versteht man alle Teile einer Webanwendung, die beim Benutzer auf
-                dem Computer ausgeführt wird. Also jedes Teil, das vom Browser angezeigt wird und
+                dem Computer ausgeführt werden. Also jedes Teil, das vom Browser angezeigt wird und
                 mit dem man interagieren kann.
               </p>
               <p>
@@ -442,9 +481,9 @@
             <div class="staggered-list-cell">
               <h3>Apps</h3>
               <p>
-                Apps können auf verschiedene Arten entwickelt werden. Meine Herangehensweise ist es,
-                Apps in JavaScript zu entwickeln. Technologien wie NativeScript, ReactNative oder
-                Ionic Capacitor kommen zum Einsatz.
+                Apps können auf verschiedene Arten entwickelt werden. Meine Herangehensweise ist es
+                auch hier, Apps in JavaScript/TypeScript zu entwickeln. Technologien wie
+                NativeScript, ReactNative oder Ionic Capacitor kommen zum Einsatz.
               </p>
               <p>
                 Der grosse Vorteil von sogenannten hybrid Apps ist es, dass man für die beiden
@@ -495,11 +534,11 @@
               <div class="portfolio-item__image">
                 <picture>
                   <source
-                    srcset="<%= require('./asset/img/png/portfolio/datapot_small.png') %>"
-                    type="image/png"
+                    srcset="<%= require('./asset/img/png/portfolio/datapot_small.webp') %>"
+                    type="image/webp"
                   />
                   <img
-                    src="<%= require('./asset/img/png/portfolio/datapot_small.webp') %>"
+                    src="<%= require('./asset/img/png/portfolio/datapot_small.png') %>"
                     alt="Datapot CRM Screenshot - Portfolio"
                     loading="lazy"
                   />
@@ -574,11 +613,11 @@
               <div class="portfolio-item__image">
                 <picture>
                   <source
-                    srcset="<%= require('./asset/img/png/portfolio/efrg-app_small.png') %>"
-                    type="image/png"
+                    srcset="<%= require('./asset/img/png/portfolio/efrg-app_small.webp') %>"
+                    type="image/webp"
                   />
                   <img
-                    src="<%= require('./asset/img/png/portfolio/efrg-app_small.webp') %>"
+                    src="<%= require('./asset/img/png/portfolio/efrg-app_small.png') %>"
                     alt="Eventfrog App Screenshot - Portfolio"
                     loading="lazy"
                   />
@@ -649,11 +688,11 @@
               <div class="portfolio-item__image">
                 <picture>
                   <source
-                    srcset="<%= require('./asset/img/png/portfolio/mageba_small.png') %>"
-                    type="image/png"
+                    srcset="<%= require('./asset/img/png/portfolio/mageba_small.webp') %>"
+                    type="image/webp"
                   />
                   <img
-                    src="<%= require('./asset/img/png/portfolio/mageba_small.webp') %>"
+                    src="<%= require('./asset/img/png/portfolio/mageba_small.png') %>"
                     alt="Mageba Screenshot - Portfolio"
                     loading="lazy"
                   />
@@ -666,10 +705,6 @@
                   Die Website beinhaltet eine Projekt-, Referenz- und Dokumenten-Verwaltung, welche
                   im Frontend abgebildet wird. Sowohl Backend- als auch Frontend-Entwicklung sowie
                   das Key-Account-Management wurde von mir durchgeführt.
-                </p>
-                <p>
-                  Dieses Projekt wurde während meiner Anstellung bei der Screenlight Interactive AG
-                  durchgeführt.
                 </p>
                 <div class="portfolio-item__inner__stack-icons">
                   <img
@@ -716,11 +751,11 @@
               <div class="portfolio-item__image">
                 <picture>
                   <source
-                    srcset="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.png') %>"
-                    type="image/png"
+                    srcset="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.webp') %>"
+                    type="image/webp"
                   />
                   <img
-                    src="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.webp') %>"
+                    src="<%= require('./asset/img/png/portfolio/affolterarchitekten_small.png') %>"
                     alt="Affolter Architekten Screenshot - Portfolio"
                     loading="lazy"
                   />
@@ -776,11 +811,11 @@
               <div class="portfolio-item__image">
                 <picture>
                   <source
-                    srcset="<%= require('./asset/img/png/portfolio/3pmw_small.png') %>"
-                    type="image/png"
+                    srcset="<%= require('./asset/img/png/portfolio/3pmw_small.webp') %>"
+                    type="image/webp"
                   />
                   <img
-                    src="<%= require('./asset/img/png/portfolio/3pmw_small.webp') %>"
+                    src="<%= require('./asset/img/png/portfolio/3pmw_small.png') %>"
                     alt="3pmw Screenshot - Portfolio"
                     loading="lazy"
                   />
@@ -835,11 +870,11 @@
               <div class="portfolio-item__image">
                 <picture>
                   <source
-                    srcset="<%= require('./asset/img/png/portfolio/genderai_small.png') %>"
-                    type="image/png"
+                    srcset="<%= require('./asset/img/png/portfolio/genderai_small.webp') %>"
+                    type="image/webp"
                   />
                   <img
-                    src="<%= require('./asset/img/png/portfolio/genderai_small.webp') %>"
+                    src="<%= require('./asset/img/png/portfolio/genderai_small.png') %>"
                     alt="genderai Screenshot - Portfolio"
                     loading="lazy"
                   />
@@ -849,7 +884,7 @@
                 <p class="portfolio-item__inner__title">genderai.com</p>
                 <p>
                   Das genderAI Web-Tool bietet die Möglichkeit, Namen in ihr entsprechendes
-                  Geschlecht umzuwandeln. Dies wird durch AI ermöglicht.
+                  Geschlecht umzuwandeln. Dies wird durch künstliche Intelligenz ermöglicht.
                 </p>
                 <p>
                   Dieses Projekt entstand 2019 und wurde seither ein paar mal neu geschrieben und in
