@@ -45,7 +45,7 @@
     user-select: none;
 
     @media only screen and (max-width: 650px) {
-      display: none;
+      align-self: center;
     }
 
     img {

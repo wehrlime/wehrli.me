@@ -13,6 +13,8 @@ const config = {
   entry: ['./src/index.ts', './src/index.scss'],
   output: {
     path: path.resolve(__dirname, '../root'),
+    filename: '[name].[fullhash].js',
+    clean: true,
   },
   devServer: {
     hot: true,
@@ -41,10 +43,6 @@ const config = {
         type: 'asset/resource',
       },
       {
-        test: /\.css$/i,
-        use: [stylesHandler, 'css-loader'],
-      },
-      {
         test: /\.s[ac]ss$/i,
         use: [stylesHandler, 'css-loader', 'sass-loader'],
       },
@@ -61,7 +59,11 @@ module.exports = () => {
   if (isProduction) {
     config.mode = 'production'
 
-    config.plugins.push(new MiniCssExtractPlugin({}))
+    config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: '[name].[fullhash].css',
+      })
+    )
   } else {
     config.mode = 'development'
   }
