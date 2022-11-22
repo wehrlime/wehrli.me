@@ -78,10 +78,9 @@ export class PageService {
             res.contentType('text/html')
             res.status(200)
 
-            html = siteGenerator.finalize(html, route.routing, req)
-            this.htmlCache.set(req.url, html)
-
             try {
+              html = siteGenerator.finalize(html, route.routing, req)
+              this.htmlCache.set(req.url, html)
               res.send(html)
             } catch (e) {
               res.status(404)

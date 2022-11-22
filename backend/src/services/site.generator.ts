@@ -73,13 +73,9 @@ export class SiteGenerator {
     }
 
     if (blogArticleMatches?.length === 1) {
-      try {
-        const blogData = this.blogService.getBlogData(request.params)
-        meta = blogData.meta
-        html = html.replace(blogArticleMatches[0], blogData.html)
-      } catch (e) {
-        // TODO redirect to 404
-      }
+      const blogData = this.blogService.getBlogData(request.params)
+      meta = blogData.meta
+      html = html.replace(blogArticleMatches[0], blogData.html)
     }
 
     if (meta) {
