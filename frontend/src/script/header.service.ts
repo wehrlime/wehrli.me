@@ -9,12 +9,8 @@ export class HeaderService {
   }
 
   private handleScroll() {
-    if (document.documentElement.scrollTop > 0) {
-      this.headerE.classList.remove('header--large')
-      this.headerE.classList.add('header--small')
-    } else {
-      this.headerE.classList.remove('header--small')
-      this.headerE.classList.add('header--large')
-    }
+    const isScrolled = document.documentElement.scrollTop > 0
+    this.headerE.classList.toggle('header--large', !isScrolled)
+    this.headerE.classList.toggle('header--small', isScrolled)
   }
 }
