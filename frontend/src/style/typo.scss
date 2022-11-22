@@ -35,6 +35,13 @@ h1 {
   font-weight: 400;
 }
 
+.article--blog h1 {
+  @media only screen and (max-width: 650px) {
+    font-size: 32px;
+    word-wrap: break-word;
+  }
+}
+
 h2 {
   font-size: 36px;
   font-weight: 400;

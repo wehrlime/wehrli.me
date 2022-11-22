@@ -111,14 +111,10 @@ export class PageService {
                   route.routing
                     .getChildUrls()
                     .forEach((url) =>
-                      urls.push(
-                        `<url><loc>${PROTOCOL_AND_DOMAIN}${url}</loc><lastmod></lastmod></url>`
-                      )
+                      urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${url}</loc></url>`)
                     )
                 } else {
-                  urls.push(
-                    `<url><loc>${PROTOCOL_AND_DOMAIN}${route.urlPath}</loc><lastmod></lastmod></url>`
-                  )
+                  urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${route.urlPath}</loc></url>`)
                 }
               })
             )

@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import express from 'express'
 import fs from 'fs'
+import helmet from 'helmet'
 import https from 'https'
 import { PageService } from './services/page.service'
 
@@ -21,6 +22,14 @@ const cert = fs.readFileSync(
 )
 
 const app = express()
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+  })
+)
+app.disable('x-powered-by')
+app.disable('server')
 const httpsServer = https.createServer({ key, cert }, app)
 
 new PageService(app)

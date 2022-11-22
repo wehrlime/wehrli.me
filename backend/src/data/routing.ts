@@ -14,7 +14,7 @@ export const routes: IIndexRouting[] = [
           title: 'Spezialsoftware fürs Internet | Michel Wehrli',
           description:
             'Michel Wehrli konzipiert und entwickelt massgeschneiderte Verwaltungssysteme, Websites und mobile Apps und verbindet diese Teilsysteme zu einem funktionierenden Ganzen.',
-          canonical: 'https://www.wehrli.me',
+          canonical: 'https://www.wehrli.me/',
         },
       },
       {
