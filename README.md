@@ -1,6 +1,6 @@
 # The home of wehrli.me
 
-A fast and simple Node SSR server with routing and caching.
+A fast and simple Node Express SSG server with routing and caching.
 
 # License
 
