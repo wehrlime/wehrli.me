@@ -1,0 +1,112 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: color(ink);
+  margin: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+button {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: space(4) 0 space(2) 0;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.article--blog h2,
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: space(3) 0 space(1) 0;
+}
+
+.article--blog h2 {
+  margin-top: space(4);
+  margin-bottom: 12px;
+}
+
+p {
+  font-weight: 400;
+  margin: 0 0 12px 0;
+  font-size: 18px;
+
+  &.lead {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.article--blog p {
+  line-height: 24px;
+}
+
+.anchor,
+a {
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-bottom: dashed 1px color(sky, dark);
+    bottom: -1px;
+    left: 0;
+  }
+
+  &:hover {
+    color: lighten(color(ink), 60);
+  }
+
+  &--highlit {
+    color: color(accent1);
+  }
+}
+
+.quote {
+  display: inline-flex;
+  padding: space(2);
+  border-radius: space(1);
+  background-color: color(sky, lighter);
+  flex-direction: column;
+  gap: space(1);
+
+  &__text {
+    font-size: 20px;
+    font-style: italic;
+    margin: 0;
+  }
+
+  &__name {
+    align-self: flex-end;
+    margin: 0;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,217 @@
+$header-height: 144px;
+
+html,
+body {
+  margin: 0;
+  background: color(sky, lighter);
+  min-width: 320px;
+}
+
+.header,
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: space(5);
+  background-color: color(sky, lightest);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0);
+
+  @media only screen and (max-width: 650px) {
+    padding: space(2) !important;
+  }
+
+  &--large {
+    transition: padding 0.1s ease-in-out 0s, box-shadow 0.1s ease-in-out 0s;
+  }
+
+  &--small {
+    padding: space(3) space(5);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: padding 0.1s ease-in-out 0s, box-shadow 0.1s ease-in-out 0s;
+
+    .header__inner__logo {
+      transform: scale(0.8);
+    }
+
+    @media only screen and (min-width: 650px) {
+      padding: space(3) space(5);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex: 1;
+    max-width: calc(1200px + calc(#{space(5)} * 2));
+
+    &__logo {
+      pointer-events: none;
+      user-select: none;
+      position: relative;
+      height: 50px;
+      transform-origin: center;
+      transition: transform 0.1s ease-in-out 0s;
+
+      @media only screen and (max-width: 850px) {
+        height: 30px;
+      }
+
+      img {
+        position: absolute;
+        height: 123%;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: center;
+      gap: space(3);
+
+      @media only screen and (max-width: 850px) {
+        flex-wrap: wrap;
+        padding-left: 90px;
+        gap: space(1);
+      }
+
+      &__item {
+        font-size: 22px;
+        position: relative;
+        white-space: nowrap;
+
+        @media only screen and (max-width: 650px) {
+          font-size: 16px;
+          line-height: 18px;
+        }
+
+        &::after {
+          display: none;
+        }
+
+        &:hover {
+          color: color(accent1) !important;
+        }
+
+        &--active {
+          color: color(accent1, dark);
+        }
+      }
+    }
+  }
+}
+
+.section,
+section {
+  padding: calc(#{space(6)} + #{$header-height}) 0 space(6) 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: color(sky, lightest);
+
+  &--standalone {
+    padding: $header-height 0 space(6) 0;
+  }
+
+  @media only screen and (max-width: 650px) {
+    padding: space(5) 0;
+  }
+
+  .article,
+  article {
+    width: 100%;
+    max-width: calc(1200px + calc(#{space(5)} * 2));
+    padding: space(8) space(5);
+
+    @media only screen and (max-width: 850px) {
+      padding: space(6) space(3);
+    }
+
+    &--centered {
+      text-align: center;
+    }
+
+    &--max-width {
+      max-width: 600px;
+    }
+
+    &--max-width-2 {
+      max-width: 800px;
+    }
+
+    &--standalone {
+      padding: space(6) space(5);
+    }
+
+    > .lead {
+      max-width: 700px;
+    }
+
+    .anchor {
+      position: relative;
+      bottom: $header-height;
+    }
+  }
+}
+
+.footer,
+footer {
+  display: flex;
+  justify-content: center;
+  padding: space(6) space(5);
+  background-color: color(sky, lighter);
+  border-top: dashed 2px color(sky, light);
+
+  @media only screen and (max-width: 650px) {
+    padding: space(3);
+
+    p {
+      font-size: 16px !important;
+    }
+  }
+
+  &__inner {
+    max-width: calc(1200px + calc(#{space(5)} * 2));
+    display: flex;
+    flex: 1;
+
+    &__left,
+    &__center,
+    &__right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    &__center {
+      pointer-events: none;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+
+      img {
+        width: 140px;
+        position: relative;
+        opacity: 0.03;
+
+        @media only screen and (max-width: 650px) {
+          width: 80px;
+        }
+      }
+    }
+
+    &__right {
+      align-items: flex-end;
+      justify-content: flex-end;
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        text-align: right;
+      }
+    }
+  }
+}

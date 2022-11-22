@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "visible": true,
+    "image": {
+      "src": "/res/static/blog/der-mehrwert-einer-mobilen-app-in-der-sport-und-unterhaltungsbranche.jpg",
+      "alt": "Illustration Smartphone mit Apps"
+    },
+    "title": "Der Mehrwert einer mobilen App in der Sport- und Unterhaltungsbranche",
+    "teaser": "Mit mobilen Apps sind Sie in der Lage, Ihre Kunden mit Ihrem Unternehmen zu verbinden. Das kann für Sie verschiedene, positive Vorteile haben.",
+    "markdownFile": "./1.md"
+  },
+  {
+    "id": 2,
+    "image": {
+      "src": "/res/static/blog/was-taugt-angular-universal.jpg",
+      "alt": ""
+    },
+    "title": "Was taugt Angular Universal?",
+    "teaser": "Angular Universal ist ein Framework um Angular auf dem Server vorzurendern und so Angular SPAs mindestens teilweise cachebar zu machen.",
+    "markdownFile": "./2.md"
+  },
+  {
+    "id": 3,
+    "image": {
+      "src": "/res/static/blog/nativescript-vs-ionic-capacitor.jpg",
+      "alt": ""
+    },
+    "title": "NativeScript vs. Ionic Capacitor",
+    "teaser": "Auf der ewigen Jagd, eine hybride mobile App so schnell wie native Apps welche in Java oder Objective-C geschrieben sind, kommt die Frage nach dem schnellsten und besten Framework immer wieder auf.",
+    "markdownFile": "./3.md"
+  },
+  {
+    "id": 4,
+    "image": {
+      "src": "/res/static/blog/die-vorteile-einer-javascript-only-codebase.jpg",
+      "alt": ""
+    },
+    "title": "Die Vorteile einer TypeScript-Only Codebase",
+    "teaser": "",
+    "markdownFile": "./2.md"
+  },
+  {
+    "id": 5,
+    "image": {
+      "src": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+      "alt": ""
+    },
+    "title": "Massgeschneiderte Verwaltungssoftware für KMU",
+    "teaser": "",
+    "markdownFile": "./2.md"
+  },
+  {
+    "id": 6,
+    "image": {
+      "src": "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==",
+      "alt": ""
+    },
+    "title": "Open-Source-Software als Basis von Verwaltungssoftware",
+    "teaser": "",
+    "markdownFile": "./2.md"
+  }
+]
