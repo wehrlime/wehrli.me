@@ -1,0 +1,16 @@
+.boxes {
+  display: flex;
+  flex-direction: column;
+  gap: space(4);
+}
+
+.box {
+  max-width: 800px;
+  padding: space(2);
+  background-color: color(sky, lighter);
+  border-radius: space(0.5);
+
+  &:nth-child(2n) {
+    align-self: flex-end;
+  }
+}

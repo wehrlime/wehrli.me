@@ -38,7 +38,7 @@ const config = {
   devServer: {
     hot: true,
     open: true,
-    host: 'localhost',
+    host: 'www.wehrli.me',
     watchFiles: ['./src/index.html'],
     liveReload: true,
   },

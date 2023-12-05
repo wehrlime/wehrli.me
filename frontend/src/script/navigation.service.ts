@@ -5,7 +5,7 @@ export class NavigationService {
 
   constructor() {
     this.navE = document.querySelector('.header__inner__nav')
-    this.navItemEs = this.navE?.querySelectorAll('.header__inner__nav__item')
+    this.navItemEs = document.querySelectorAll('.header__inner__nav__item')
     this.anchorEs = document.querySelectorAll('a[name]')
 
     window.addEventListener('load', () => this.handleFragment())
