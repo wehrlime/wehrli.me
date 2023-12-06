@@ -4,10 +4,10 @@ import { IRouting } from '../types/routes/IRouting'
 import { BlogService } from './blog.service'
 import { DATA_ROOT } from './page.service'
 
-const INCLUDE_REGEX = /<include.*><\/include>/g
+const INCLUDE_REGEX = /<include[^<>]+><\/include>/g
 const ROUTE_REGEX = /<route><\/route>/g
 const BLOGS_REGEX = /<blogs><\/blogs>/g
-const BLOG_ARTICLE_REGEX = /<blog-article.*><\/blog-article>/g
+const BLOG_ARTICLE_REGEX = /<blog-article><\/blog-article>/g
 const TITLE_REGEX = /<title>.*<\/title>/g
 const META_TITLE_REGEX = /<meta name="title" content="([^")]*)"\/>/g
 const META_DESCRIPTION_REGEX = /<meta name="description" content="([^")]*)"\/>/g
@@ -39,6 +39,8 @@ export class SiteGenerator {
       if (fs.existsSync(includePath)) {
         const includeHTML = this.loadHTML(DATA_ROOT + '/' + path) || ''
         html = html.replace(match, includeHTML)
+      } else {
+        console.error(`"${includePath}" does not exist`)
       }
     })
 

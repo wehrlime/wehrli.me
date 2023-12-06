@@ -1,0 +1,57 @@
+<div class="portfolio-item__image">
+  <a href="res/genderai.png" target="_blank">
+    <picture>
+      <source
+        srcset="<%= require('../../../asset/img/png/portfolio/genderai.png') %>"
+        type="image/webp"
+      />
+      <source
+        srcset="<%= require('../../../asset/img/png/portfolio/genderai_small.webp') %>"
+        type="image/webp"
+      />
+      <img
+        src="<%= require('../../../asset/img/png/portfolio/genderai_small.png') %>"
+        alt="genderai Screenshot - Portfolio"
+        loading="lazy"
+      />
+    </picture>
+  </a>
+</div>
+<div class="portfolio-item__inner">
+  <p class="portfolio-item__inner__title">genderai.com</p>
+  <p>
+    The genderAI web tool features the possibility to convert names in the corresponding gender.
+    This is done by a neural net, which performs the classification.
+  </p>
+  <p>I created this side project in 2019.</p>
+  <p>
+    Tech stack is <i>Synaptic</i> as AI framework, <i>Node.js</i> with <i>Express</i> and
+    <i>Angular</i>.
+  </p>
+  <div class="portfolio-item__inner__stack-icons">
+    <img
+      src="<%= require('../../../asset/img/svg/tech/nodejs.svg') %>"
+      width="20"
+      height="20"
+      loading="lazy"
+      alt="Node.js Icon"
+    />
+    <img
+      src="<%= require('../../../asset/img/svg/tech/angular.svg') %>"
+      width="20"
+      height="20"
+      loading="lazy"
+      alt="Angular Icon"
+    />
+    <img
+      src="<%= require('../../../asset/img/svg/tech/ts.svg') %>"
+      width="20"
+      height="20"
+      loading="lazy"
+      alt="TypeScript Icon"
+    />
+  </div>
+  <a href="https://www.genderai.com" target="_blank" class="portfolio-item__inner__visit-link">
+    Visit Tool&nbsp;&nbsp;🡒
+  </a>
+</div>

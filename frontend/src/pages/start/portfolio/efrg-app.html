@@ -1,0 +1,60 @@
+<div class="portfolio-item__image">
+  <a href="res/efrg-app.png" target="_blank">
+    <picture>
+      <source
+        srcset="<%= require('../../../asset/img/png/portfolio/efrg-app.png') %>"
+        type="image/png"
+      />
+      <source
+        srcset="<%= require('../../../asset/img/png/portfolio/efrg-app_small.webp') %>"
+        type="image/webp"
+      />
+      <img
+        src="<%= require('../../../asset/img/png/portfolio/efrg-app_small.png') %>"
+        alt="Eventfrog App Screenshot - Portfolio"
+        loading="lazy"
+      />
+    </picture>
+  </a>
+</div>
+<div class="portfolio-item__inner">
+  <p class="portfolio-item__inner__title">Eventfrog App</p>
+  <p>
+    The Eventfrog ticket buyer mobile app is the entry portal for Eventfrog clients. Users can
+    access their bought tickets, search for events and buy more tickets.
+  </p>
+  <p>
+    For Eventfrog I completely revamped the app and brought it to the latest state of technology.
+  </p>
+  <p>Tech stack is <i>Ionic Framework</i>, <i>Angular</i> and <i>TypeScript</i>.</p>
+  <div class="portfolio-item__inner__stack-icons">
+    <img
+      src="<%= require('../../../asset/img/svg/tech/ionic-capacitor.svg') %>"
+      loading="lazy"
+      width="20"
+      height="20"
+      alt="Ionic Capacitor Icon"
+    />
+    <img
+      src="<%= require('../../../asset/img/svg/tech/angular.svg') %>"
+      width="20"
+      height="20"
+      loading="lazy"
+      alt="Angular Icon"
+    />
+    <img
+      src="<%= require('../../../asset/img/svg/tech/ts.svg') %>"
+      width="20"
+      height="20"
+      loading="lazy"
+      alt="TypeScript Icon"
+    />
+  </div>
+  <a
+    href="https://eventfrog.net/efrg-app.html"
+    target="_blank"
+    class="portfolio-item__inner__visit-link"
+  >
+    Install App&nbsp;&nbsp;🡒
+  </a>
+</div>

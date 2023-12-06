@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
@@ -6,7 +7,16 @@ const CopyPlugin = require('copy-webpack-plugin')
 const isProduction = process.env.NODE_ENV == 'production'
 const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader'
 
-let pages = ['imprint', 'privacy', 'start', 'blog', 'article', '404']
+const getAllFiles = (dir) =>
+  fs.readdirSync(dir).reduce((files, file) => {
+    const name = path.join(dir, file)
+    const isDirectory = fs.statSync(name).isDirectory()
+    return isDirectory ? [...files, ...getAllFiles(name)] : [...files, name]
+  }, [])
+
+let pages = getAllFiles('./src/pages/').map((path) =>
+  path.replace('.html', '').replace('src\\pages\\', '')
+)
 let pageHtmls = pages.map((name) => {
   return new HtmlWebpackPlugin({
     template: `./src/pages/${name}.html`,
@@ -16,7 +26,9 @@ let pageHtmls = pages.map((name) => {
   })
 })
 
-let includes = ['header_default', 'header_short', 'header_blog-article', 'footer']
+let includes = getAllFiles('./src/includes/').map((path) =>
+  path.replace('.html', '').replace('src\\includes\\', '')
+)
 let includeHtmls = includes.map((name) => {
   return new HtmlWebpackPlugin({
     template: `./src/includes/${name}.html`,

@@ -1,29 +1,37 @@
 .portfolio-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: space(3);
   overflow: hidden;
   border-radius: space(1);
 
-  &--horizontal {
-    flex-direction: row;
-
+  &--mobile {
     .portfolio-item__image {
       flex: 1;
-      height: auto;
     }
 
     .portfolio-item__inner {
-      flex: 2;
+      flex: 3;
     }
   }
 
   &__image {
-    aspect-ratio: 2.5/1;
+    aspect-ratio: 4/1;
     position: relative;
     overflow: hidden;
     border-radius: space(1);
     transition: filter 0.1s ease-in-out 0s;
+    flex: 1.5;
+    height: auto;
+
+    a {
+      display: block;
+      cursor: pointer;
+
+      &:after {
+        display: none;
+      }
+    }
 
     img,
     picture {
@@ -36,6 +44,7 @@
   &__inner {
     display: flex;
     flex-direction: column;
+    flex: 1;
 
     &__title {
       font-size: 20px;

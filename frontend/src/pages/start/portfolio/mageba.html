@@ -1,0 +1,47 @@
+<div class="portfolio-item__image">
+  <a href="res/mageba.png" target="_blank">
+    <picture>
+      <source
+        srcset="<%= require('../../../asset/img/png/portfolio/mageba.png') %>"
+        type="image/webp"
+      />
+      <source
+        srcset="<%= require('../../../asset/img/png/portfolio/mageba_small.webp') %>"
+        type="image/webp"
+      />
+      <img
+        src="<%= require('../../../asset/img/png/portfolio/mageba_small.png') %>"
+        alt="Mageba Screenshot - Portfolio"
+        loading="lazy"
+      />
+    </picture>
+  </a>
+</div>
+<div class="portfolio-item__inner">
+  <p class="portfolio-item__inner__title">Mageba Global</p>
+  <p>
+    The relaunch of mageba's corporate website was completed in 2020 and took around a year. The
+    website's CMS features a custom project, project reference and document management system, which
+    is represented in the front end for customers to use.
+  </p>
+  <p>Back end and front end engineering as well as key account management was done by me.</p>
+  <div class="portfolio-item__inner__stack-icons">
+    <img
+      src="<%= require('../../../asset/img/svg/tech/php.svg') %>"
+      width="20"
+      height="20"
+      loading="lazy"
+      alt="PHP Icon"
+    />
+    <img
+      src="<%= require('../../../asset/img/svg/tech/js.svg') %>"
+      width="20"
+      height="20"
+      loading="lazy"
+      alt="JavaScript Icon"
+    />
+  </div>
+  <a href="https://www.mageba.ch" target="_blank" class="portfolio-item__inner__visit-link">
+    Visit Website&nbsp;&nbsp;🡒
+  </a>
+</div>
