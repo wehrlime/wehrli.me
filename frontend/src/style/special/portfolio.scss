@@ -5,7 +5,15 @@
   overflow: hidden;
   border-radius: space(1);
 
+  @media only screen and (max-width: 650px) {
+    flex-direction: column;
+  }
+
   &--mobile {
+    @media only screen and (max-width: 650px) {
+      flex-direction: row;
+    }
+
     .portfolio-item__image {
       flex: 1;
     }
