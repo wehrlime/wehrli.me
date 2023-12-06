@@ -105,6 +105,12 @@ a {
   &--highlit {
     color: color(accent1);
   }
+
+  &--blank {
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .quote {
