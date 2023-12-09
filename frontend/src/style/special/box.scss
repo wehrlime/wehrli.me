@@ -13,4 +13,8 @@
   &:nth-child(2n) {
     align-self: flex-end;
   }
+
+  p {
+    text-wrap: pretty;
+  }
 }

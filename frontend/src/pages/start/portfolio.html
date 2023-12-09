@@ -1,31 +1,241 @@
 <h2>Portfolio</h2>
-<p class="lead">Here you find a selection of my completed projects.</p>
+<p class="lead">
+  Here you find a selection of my completed projects.<br />Click on a tile to learn more about the
+  project.
+</p>
 <br />
 <br />
 
-<div class="boxes">
-  <div class="box portfolio-item">
-    <include path="pages/start/portfolio/datapot-crm.html"></include>
-  </div>
-  <div class="box portfolio-item portfolio-item--mobile">
-    <include path="pages/start/portfolio/entry-app.html"></include>
-  </div>
-  <div class="box portfolio-item">
-    <include path="pages/start/portfolio/affolter-architekten.html"></include>
-  </div>
-  <div class="box portfolio-item portfolio-item--mobile">
-    <include path="pages/start/portfolio/rsz.html"></include>
-  </div>
-  <div class="box portfolio-item portfolio-item--mobile">
-    <include path="pages/start/portfolio/efrg-app.html"></include>
-  </div>
-  <div class="box portfolio-item">
-    <include path="pages/start/portfolio/genderai.html"></include>
-  </div>
-  <div class="box portfolio-item">
-    <include path="pages/start/portfolio/mageba.html"></include>
-  </div>
-  <div class="box portfolio-item">
-    <include path="pages/start/portfolio/3pmw.html"></include>
-  </div>
+<div class="tiles">
+  <a href="portfolio/datapot-crm" title="Learn more about the Datapot CRM project" class="tile">
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/datapot.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/datapot.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/datapot.png') %>"
+          alt="Datapot CRM project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>Datapot CRM</p>
+      <p class="tile__content__sub">
+        Tailor-made CRM system to manage and transform person and company data.
+      </p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
+  <a
+    href="portfolio/eventfrog-entry"
+    title="Learn more about the Eventfrog Entry App project"
+    class="tile"
+  >
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/entry-app.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/entry-app.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/entry-app.png') %>"
+          alt="Eventfrog Entry App project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>Eventfrog Entry App</p>
+      <p class="tile__content__sub">Built-from-scratch ticket admission control mobile app.</p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
+  <a
+    href="portfolio/affolter-architekten-website"
+    title="Learn more about the Affolter Architekten project"
+    class="tile"
+  >
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/affolterarchitekten.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/affolterarchitekten.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/affolterarchitekten.png') %>"
+          alt="Affolter Architekten project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>Affolter Architekten Website</p>
+      <p class="tile__content__sub">
+        Single page corporate website to represent a young architectural company.
+      </p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
+  <a
+    href="portfolio/race-sim-zone-app"
+    title="Learn more about the Race Sim Zone App project"
+    class="tile"
+  >
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/rsz.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/rsz.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/rsz.png') %>"
+          alt="Race Sim Zone App project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>Race Sim Zone App</p>
+      <p class="tile__content__sub">
+        Mobile app for a sim racing venue to act as an information point for visitors.
+      </p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
+  <a href="mailto:hallo@wehrli.me" title="Contact me!" target="_blank" class="tile tile--ad">
+    <p>🧐<br />Your project could be listed here.</p>
+    <p class="anchor">Let's talk!</p>
+  </a>
+  <a href="portfolio/eventfrog-app" title="Learn more about the Eventfrog App project" class="tile">
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/efrg-app.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/efrg-app.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/efrg-app.png') %>"
+          alt="Eventfrog App project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>Eventfrog App</p>
+      <p class="tile__content__sub">
+        Revamp of the ticket buyer app, where users can view bought tickets and buy new ones.
+      </p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
+  <a href="portfolio/genderai-tool" title="Learn more about the GenderAI project" class="tile">
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/genderai.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/genderai.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/genderai.png') %>"
+          alt="GenderAI project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>GenderAI Tool</p>
+      <p class="tile__content__sub">
+        Online tool to classify names into gender by utilising artificial intelligence.
+      </p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
+  <a href="portfolio/mageba-website" title="Learn more about the Mageba project" class="tile">
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/mageba.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/mageba.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/mageba.png') %>"
+          alt="Mageba project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>Mageba Website</p>
+      <p class="tile__content__sub">
+        Complete rebuild of the corporate website with new web technologies and custom features.
+      </p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
+  <a href="portfolio/3pmw-website" title="Learn more about the 3pmw project" class="tile">
+    <div class="tile__img">
+      <picture>
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/3pmw.webp') %>"
+          type="image/webp"
+        />
+        <source
+          srcset="<%= require('../../asset/img/png/portfolio/3pmw.png') %>"
+          type="image/jpeg"
+        />
+        <img
+          src="<%= require('../../asset/img/png/portfolio/3pmw.png') %>"
+          alt="3pmw project image"
+          width="319"
+          height="319"
+        />
+      </picture>
+    </div>
+    <div class="tile__content">
+      <p>3pmw Website</p>
+      <p class="tile__content__sub">
+        Wordpress corporate website to represent the project management services business on the
+        web.
+      </p>
+      <p class="anchor">Learn more</p>
+    </div>
+  </a>
 </div>

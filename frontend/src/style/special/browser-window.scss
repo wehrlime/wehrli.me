@@ -1,0 +1,27 @@
+.browser-window {
+  border: 6px solid #e8e8e8;
+  border-radius: 8px;
+  max-width: 900px;
+
+  &__top {
+    padding: 10px;
+    background: #e8e8e8;
+
+    &__dot {
+      height: 12px;
+      width: 12px;
+      background-color: #b0b0b0;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
+
+  &__content {
+    img {
+      display: block;
+      max-height: 400px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}

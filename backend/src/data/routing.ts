@@ -1,7 +1,7 @@
-import { BlogService } from '../services/blog.service'
+import { PortfolioService } from '../services/portfolio.service'
 import { IIndexRouting } from '../types/routes/IRouting'
 
-const blogService = new BlogService()
+const portfolioService = new PortfolioService()
 const mainTitle = 'Tailor-made Software for the Web | Michel Wehrli'
 
 export const routes: IIndexRouting[] = [
@@ -14,7 +14,7 @@ export const routes: IIndexRouting[] = [
         meta: {
           title: `${mainTitle}`,
           description:
-            'Michel Wehrli konzipiert und entwickelt massgeschneiderte Verwaltungssysteme, Websites und mobile Apps und verbindet diese Teilsysteme zu einem funktionierenden Ganzen.',
+            "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
           canonical: 'https://www.wehrli.me/',
         },
       },
@@ -23,7 +23,7 @@ export const routes: IIndexRouting[] = [
         file: 'imprint.html',
         meta: {
           title: `Imprint | ${mainTitle}`,
-          description: 'Das Impressum von wehrli.me.',
+          description: `Imprint of wehrli.me`,
           canonical: 'https://www.wehrli.me/imprint',
         },
       },
@@ -32,7 +32,7 @@ export const routes: IIndexRouting[] = [
         file: 'privacy.html',
         meta: {
           title: `Privacy | ${mainTitle}`,
-          description: 'Die Datenschutzrichtlinien von wehrli.me.',
+          description: 'Privacy policy of wehrli.me',
           canonical: 'https://www.wehrli.me/privacy',
         },
       },
@@ -41,6 +41,11 @@ export const routes: IIndexRouting[] = [
         file: 'article.html',
         getChildUrls: () => blogService.getBlogArticleUrls('blog/:name', 'name'),
       },*/
+      {
+        urlPart: 'portfolio/:name',
+        file: 'portfolio/index.html',
+        getChildUrls: () => portfolioService.getUrls('portfolio/:name', 'name'),
+      },
       {
         is404Page: true,
         file: '404.html',

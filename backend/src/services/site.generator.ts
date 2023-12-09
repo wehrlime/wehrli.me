@@ -1,20 +1,25 @@
 import { Request } from 'express'
 import * as fs from 'fs'
+import { PROTOCOL_AND_DOMAIN } from '..'
 import { IRouting } from '../types/routes/IRouting'
 import { BlogService } from './blog.service'
 import { DATA_ROOT } from './page.service'
+import { PortfolioService } from './portfolio.service'
 
 const INCLUDE_REGEX = /<include[^<>]+><\/include>/g
 const ROUTE_REGEX = /<route><\/route>/g
 const BLOGS_REGEX = /<blogs><\/blogs>/g
 const BLOG_ARTICLE_REGEX = /<blog-article><\/blog-article>/g
+const PORTFOLIO_ARTICLE_REGEX = /<portfolio-article><\/portfolio-article>/g
 const TITLE_REGEX = /<title>.*<\/title>/g
 const META_TITLE_REGEX = /<meta name="title" content="([^")]*)"\/>/g
 const META_DESCRIPTION_REGEX = /<meta name="description" content="([^")]*)"\/>/g
 const LINK_CANONICAL = /<link rel="canonical" href="([^")]*)"\/>/g
+const META_ROBOTS = /<meta name="robots"\/>/g
 
 export class SiteGenerator {
   private readonly blogService = new BlogService()
+  private readonly portfolioService = new PortfolioService()
 
   private readonly indexHTML: string
 
@@ -64,6 +69,7 @@ export class SiteGenerator {
     const routeMatches = html.match(ROUTE_REGEX)
     const blogsMatches = html.match(BLOGS_REGEX)
     const blogArticleMatches = html.match(BLOG_ARTICLE_REGEX)
+    const portfolioArticleMatches = html.match(PORTFOLIO_ARTICLE_REGEX)
 
     includeMatches?.forEach((includeMatch) => (html = html.replace(includeMatch, '')))
     routeMatches?.forEach((routeMatch) => (html = html.replace(routeMatch, '')))
@@ -71,13 +77,26 @@ export class SiteGenerator {
     let meta = route.meta
 
     if (blogsMatches?.length === 1) {
-      html = html.replace(blogsMatches[0], this.blogService.getBlogList())
+      html = html.replace(blogsMatches[0], this.blogService.getList())
     }
 
     if (blogArticleMatches?.length === 1) {
-      const blogData = this.blogService.getBlogData(request.params)
-      meta = blogData.meta
-      html = html.replace(blogArticleMatches[0], blogData.html)
+      const data = this.blogService.getData(request.params)
+      meta = data.meta
+      html = html.replace(blogArticleMatches[0], data.html)
+    }
+
+    if (portfolioArticleMatches?.length === 1) {
+      const name = request.params['name']
+      html = html.replace(portfolioArticleMatches[0], this.portfolioService.getHtml(name))
+      meta = {
+        title: `Portfolio Page: ${name
+          .replaceAll('-', ' ')
+          .split(' ')
+          .map((word) => word[0].toUpperCase() + word.substring(1))
+          .join(' ')}`,
+        canonical: this.portfolioService.getUrl(PROTOCOL_AND_DOMAIN, name),
+      }
     }
 
     if (meta) {
@@ -105,6 +124,14 @@ export class SiteGenerator {
         if (canonicalMatch) {
           html = html.replace(canonicalMatch, `<link rel="canonical" href="${meta.canonical}" />`)
         }
+      }
+
+      const robotsMatch = html.match(META_ROBOTS)?.[0]
+      if (robotsMatch) {
+        html = html.replace(
+          robotsMatch,
+          `<meta name="robots" content="${meta?.noIndex ? 'noindex' : 'index'}">`
+        )
       }
     }
 

@@ -112,12 +112,16 @@ section {
   align-items: center;
   background-color: color(sky, lightest);
 
-  &--standalone {
-    padding: $header-height 0 space(6) 0;
-  }
-
   @media only screen and (max-width: 650px) {
     padding: space(5) 0;
+  }
+
+  &--standalone {
+    padding: $header-height 0 space(6) 0;
+
+    @media only screen and (max-width: 650px) {
+      padding: space(5) 0;
+    }
   }
 
   .article,
@@ -127,7 +131,7 @@ section {
     padding: space(8) space(5);
 
     @media only screen and (max-width: 850px) {
-      padding: space(6) space(3);
+      padding: space(3);
     }
 
     &--centered {
@@ -144,6 +148,16 @@ section {
 
     &--standalone {
       padding: space(6) space(5);
+
+      @media only screen and (max-width: 850px) {
+        padding: space(6) space(3);
+      }
+    }
+
+    &--reference {
+      &__img {
+        width: 100%;
+      }
     }
 
     > .lead {

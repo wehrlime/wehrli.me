@@ -12,7 +12,7 @@ export class BlogService {
     html: true,
   })
 
-  getBlogData(params: any): { meta: IMeta; html: string } {
+  getData(params: any): { meta: IMeta; html: string } {
     const articles = this.loadArticles()
 
     const blogName = params.name
@@ -24,13 +24,13 @@ export class BlogService {
       meta: {
         title: article.title + TITLE_POSTFIX,
         description: article.teaser,
-        canonical: this.getArticleUrl(article),
+        canonical: this.getUrl(article),
       },
       html: this.generateArticleHtml(blogId, article),
     }
   }
 
-  getBlogList(): string {
+  getList(): string {
     let html = ''
 
     const articles = this.loadArticles()
@@ -48,16 +48,16 @@ export class BlogService {
     return html
   }
 
-  getBlogArticleUrls(base: string, paramName: string): string[] {
+  getArticleUrls(base: string, paramName: string): string[] {
     const urls: string[] = []
     this.loadArticles().forEach((article) =>
-      urls.push(`/${base.replace(`:${paramName}`, this.getBlogName(article))}`)
+      urls.push(`/${base.replace(`:${paramName}`, this.getName(article))}`)
     )
     return urls
   }
 
-  private getArticleUrl(article: IArticle): string {
-    return `${PROTOCOL_AND_DOMAIN}${BLOG_BASE_URL}${this.getBlogName(article)}`
+  private getUrl(article: IArticle): string {
+    return `${PROTOCOL_AND_DOMAIN}${BLOG_BASE_URL}${this.getName(article)}`
   }
 
   private loadArticles(visibleOnly = true): IArticle[] {
@@ -92,7 +92,7 @@ export class BlogService {
   private generateEntryHtml(article: IArticle): string {
     return `
       <a
-        href="${BLOG_BASE_URL}${this.getBlogName(article)}"
+        href="${BLOG_BASE_URL}${this.getName(article)}"
         class="blogs__blog"
       >
         <img
@@ -115,7 +115,7 @@ export class BlogService {
           Kontaktieren Sie mich unverbindlich für eine kostenlose Evaluation Ihrer Idee.
         </p>
         <p>
-          <a href="mailto:hello@wehrli.me" class="button button--gradient">
+          <a href="mailto:hallo@wehrli.me" class="button button--gradient">
             Kontakt herstellen
           </a>
         </p>
@@ -123,7 +123,7 @@ export class BlogService {
     `
   }
 
-  private getBlogName(article: IArticle): string {
+  private getName(article: IArticle): string {
     return `${article.id}-${article.title
       .split('ä')
       .join('ae')

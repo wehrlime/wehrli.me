@@ -1,0 +1,16 @@
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: space(0.5);
+}
+
+.tag {
+  padding: 2px 4px;
+  border-radius: 4px;
+  background-color: color(accent1);
+  color: color(sky, lightest);
+  display: inline-block;
+  font-size: 14px;
+  margin: 0;
+}

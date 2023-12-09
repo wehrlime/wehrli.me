@@ -16,4 +16,5 @@ export interface IMeta {
   title: string
   description?: string
   canonical?: string
+  noIndex?: boolean
 }

@@ -103,7 +103,7 @@ export class PageService {
 
         routes.map((indexRoute) =>
           indexRoute.children
-            ?.filter((child) => !child.is404Page)
+            ?.filter((child) => !child.is404Page && !child?.meta?.noIndex)
             ?.map((child) =>
               this.getPaths(child).forEach((route) => {
                 if (route.routing?.getChildUrls) {

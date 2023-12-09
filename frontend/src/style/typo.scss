@@ -42,7 +42,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 36px;
   font-weight: 400;
 }
@@ -69,6 +70,7 @@ p {
   font-weight: 400;
   margin: 0 0 12px 0;
   font-size: 18px;
+  text-wrap: pretty;
 
   &.lead {
     font-size: 20px;
