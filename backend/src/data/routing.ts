@@ -19,7 +19,17 @@ export const routes: IIndexRouting[] = [
         },
       },
       {
-        urlPart: 'imprint',
+        urlPart: ':lang',
+        file: 'start.html',
+        meta: {
+          title: `${mainTitle}`,
+          description:
+            "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
+          canonical: 'https://www.wehrli.me/',
+        },
+      },
+      {
+        urlPart: ':lang/imprint',
         file: 'imprint.html',
         meta: {
           title: `Imprint | ${mainTitle}`,
@@ -28,7 +38,7 @@ export const routes: IIndexRouting[] = [
         },
       },
       {
-        urlPart: 'privacy',
+        urlPart: ':lang/privacy',
         file: 'privacy.html',
         meta: {
           title: `Privacy | ${mainTitle}`,
@@ -42,7 +52,7 @@ export const routes: IIndexRouting[] = [
         getChildUrls: () => blogService.getBlogArticleUrls('blog/:name', 'name'),
       },*/
       {
-        urlPart: 'portfolio/:name',
+        urlPart: ':lang/portfolio/:name',
         file: 'portfolio/index.html',
         getChildUrls: () => portfolioService.getUrls('portfolio/:name', 'name'),
       },

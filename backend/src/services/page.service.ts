@@ -1,3 +1,4 @@
+import acceptLanguage from 'accept-language'
 import { Express, Request, Response } from 'express'
 import * as fs from 'fs'
 import { flatten } from 'lodash'
@@ -6,6 +7,7 @@ import { PROTOCOL_AND_DOMAIN } from '..'
 import { routes } from '../data/routing'
 import { IRouting } from '../types/routes/IRouting'
 import { SiteGenerator } from './site.generator'
+import { ELanguage } from './translate.service'
 
 export const DATA_ROOT = '../../root'
 const PAGE_ROOT = DATA_ROOT + '/pages'
@@ -16,12 +18,70 @@ export class PageService {
 
   constructor(app: Express) {
     routes.forEach((indexRoute) => {
+      app.get(['*.css', '*.js', '/res/*'], (req: Request, res: Response) => {
+        const splitted = req.url.split('/')
+        const fileName = splitted[splitted.length - 1]
+        const path = req.url.replace(fileName, '')
+        const filePath = `${DATA_ROOT}${path}${fileName}`
+        const type = mime.getType(filePath) || 'text/plain'
+
+        this.setCachingHeaders(res, type)
+
+        try {
+          res.status(200)
+          res.contentType(type)
+          const data = fs.readFileSync(filePath)
+          res.send(data)
+        } catch (err) {
+          res.status(404)
+          if (mime.getType(req.url)) {
+            res.end()
+          } else {
+            res.contentType('text/html')
+            res.send(this.getNotFoundHtml(indexRoute, this.getLang(req)))
+          }
+        }
+      })
+
+      app.get(['/sitemap.xml'], (req: Request, res: Response) => {
+        const urls: string[] = []
+
+        routes.map((indexRoute) =>
+          indexRoute.children
+            ?.filter((child) => !child.is404Page && !child?.meta?.noIndex)
+            ?.map((child) =>
+              this.getPaths(child).forEach((route) => {
+                if (route.routing?.getChildUrls) {
+                  route.routing
+                    .getChildUrls()
+                    .forEach((url) =>
+                      urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${url}</loc></url>`)
+                    )
+                } else {
+                  urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${route.urlPath}</loc></url>`)
+                }
+              })
+            )
+        )
+
+        res.status(200)
+        res.contentType('application/xml')
+        res.send(
+          `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join(
+            ''
+          )}</urlset>`
+        )
+      })
+
       flatten(
         indexRoute.children
           ?.filter((child) => !child.is404Page)
           ?.map((child) => this.getPaths(child))
       )?.forEach((route) => {
         app.get(route.urlPath, (req: Request, res: Response) => {
+          if (route.routing.redirect) {
+            res.redirect(`/${this.getLang(req)}`)
+          }
           // check if any of the route files changed
           let fileChanged = false
           route.filePaths.forEach((filePath) => {
@@ -43,7 +103,7 @@ export class PageService {
             return
           }
 
-          const siteGenerator = new SiteGenerator(indexRoute.file)
+          const siteGenerator = new SiteGenerator(indexRoute.file, this.getLang(req))
 
           let status = 200
           let error = new Error()
@@ -84,7 +144,7 @@ export class PageService {
               res.send(html)
             } catch (e) {
               res.status(404)
-              res.send(this.getNotFoundHtml(indexRoute))
+              res.send(this.getNotFoundHtml(indexRoute, this.getLang(req)))
             }
           } else {
             res.status(status)
@@ -96,61 +156,6 @@ export class PageService {
             }
           }
         })
-      })
-
-      app.get(['/sitemap.xml'], (req: Request, res: Response) => {
-        const urls: string[] = []
-
-        routes.map((indexRoute) =>
-          indexRoute.children
-            ?.filter((child) => !child.is404Page && !child?.meta?.noIndex)
-            ?.map((child) =>
-              this.getPaths(child).forEach((route) => {
-                if (route.routing?.getChildUrls) {
-                  route.routing
-                    .getChildUrls()
-                    .forEach((url) =>
-                      urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${url}</loc></url>`)
-                    )
-                } else {
-                  urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${route.urlPath}</loc></url>`)
-                }
-              })
-            )
-        )
-
-        res.status(200)
-        res.contentType('application/xml')
-        res.send(
-          `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join(
-            ''
-          )}</urlset>`
-        )
-      })
-
-      app.get(['*', '/res/*'], (req: Request, res: Response) => {
-        const splitted = req.url.split('/')
-        const fileName = splitted[splitted.length - 1]
-        const path = req.url.replace(fileName, '')
-        const filePath = `${DATA_ROOT}/${path}/${fileName}`
-        const type = mime.getType(filePath) || 'text/plain'
-
-        this.setCachingHeaders(res, type)
-
-        try {
-          res.status(200)
-          res.contentType(type)
-          const data = fs.readFileSync(filePath)
-          res.send(data)
-        } catch (err) {
-          res.status(404)
-          if (mime.getType(req.url)) {
-            res.end()
-          } else {
-            res.contentType('text/html')
-            res.send(this.getNotFoundHtml(indexRoute))
-          }
-        }
       })
     })
   }
@@ -186,13 +191,24 @@ export class PageService {
     res.setHeader('Cache-control', `public, max-age=${maxAge}`)
   }
 
-  private getNotFoundHtml(indexRoute: IRouting): string {
+  private getNotFoundHtml(indexRoute: IRouting, lang: ELanguage): string {
     const notFoundRoute = indexRoute.children.find((child) => child.is404Page)
-    const tempSiteGenerator = new SiteGenerator(indexRoute.file)
+    const tempSiteGenerator = new SiteGenerator(indexRoute.file, lang)
     return tempSiteGenerator.getRouteHTML(
       tempSiteGenerator.getHTML(),
       PAGE_ROOT + '/' + notFoundRoute.file
     )
+  }
+
+  private getLang(req: Request): ELanguage {
+    let lang = req.params['lang'] as ELanguage
+
+    if (!lang) {
+      acceptLanguage.languages(Object.values(ELanguage))
+      lang = acceptLanguage.get(req.headers['accept-language']) as ELanguage
+    }
+
+    return lang
   }
 }
 

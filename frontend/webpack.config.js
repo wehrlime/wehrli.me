@@ -22,7 +22,9 @@ let pageHtmls = pages.map((name) => {
     template: `./src/pages/${name}.html`,
     filename: `./pages/${name}.html`,
     inject: false,
-    minify: true,
+    minify: {
+      removeComments: false,
+    },
   })
 })
 
@@ -34,7 +36,9 @@ let includeHtmls = includes.map((name) => {
     template: `./src/includes/${name}.html`,
     filename: `./includes/${name}.html`,
     inject: false,
-    minify: true,
+    minify: {
+      removeComments: false,
+    },
   })
 })
 

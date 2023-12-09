@@ -10,6 +10,7 @@ export interface IRouting {
   children?: IRouting[]
   meta?: IMeta
   getChildUrls?: () => string[]
+  redirect?: string
 }
 
 export interface IMeta {

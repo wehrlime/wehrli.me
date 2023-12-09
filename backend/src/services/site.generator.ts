@@ -5,6 +5,7 @@ import { IRouting } from '../types/routes/IRouting'
 import { BlogService } from './blog.service'
 import { DATA_ROOT } from './page.service'
 import { PortfolioService } from './portfolio.service'
+import { ELanguage, TranslateService } from './translate.service'
 
 const INCLUDE_REGEX = /<include[^<>]+><\/include>/g
 const ROUTE_REGEX = /<route><\/route>/g
@@ -20,10 +21,11 @@ const META_ROBOTS = /<meta name="robots"\/>/g
 export class SiteGenerator {
   private readonly blogService = new BlogService()
   private readonly portfolioService = new PortfolioService()
+  private readonly translateService = new TranslateService()
 
   private readonly indexHTML: string
 
-  constructor(private readonly indexPath: string) {
+  constructor(private readonly indexPath: string, private readonly lang: ELanguage) {
     this.indexHTML = this.loadHTML(DATA_ROOT + '/' + this.indexPath)
   }
 
@@ -87,15 +89,19 @@ export class SiteGenerator {
     }
 
     if (portfolioArticleMatches?.length === 1) {
-      const name = request.params['name']
-      html = html.replace(portfolioArticleMatches[0], this.portfolioService.getHtml(name))
-      meta = {
-        title: `Portfolio Page: ${name
-          .replaceAll('-', ' ')
-          .split(' ')
-          .map((word) => word[0].toUpperCase() + word.substring(1))
-          .join(' ')}`,
-        canonical: this.portfolioService.getUrl(PROTOCOL_AND_DOMAIN, name),
+      try {
+        const name = request.params['name']
+        html = html.replace(portfolioArticleMatches[0], this.portfolioService.getHtml(name))
+        meta = {
+          title: `Portfolio Page: ${name
+            .replaceAll('-', ' ')
+            .split(' ')
+            .map((word) => word[0].toUpperCase() + word.substring(1))
+            .join(' ')}`,
+          canonical: this.portfolioService.getUrl(PROTOCOL_AND_DOMAIN, name),
+        }
+      } catch (e) {
+        console.error(e)
       }
     }
 
@@ -135,6 +141,6 @@ export class SiteGenerator {
       }
     }
 
-    return html
+    return this.translateService.translate(html, this.lang)
   }
 }
