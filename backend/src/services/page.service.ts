@@ -18,30 +18,33 @@ export class PageService {
 
   constructor(app: Express) {
     routes.forEach((indexRoute) => {
-      app.get(['*.css', '*.js', '/res/*'], (req: Request, res: Response) => {
-        const splitted = req.url.split('/')
-        const fileName = splitted[splitted.length - 1]
-        const path = req.url.replace(fileName, '')
-        const filePath = `${DATA_ROOT}${path}${fileName}`
-        const type = mime.getType(filePath) || 'text/plain'
+      app.get(
+        ['*.txt', '*.css', '*.js', '*.ico', '*.png', '/res/*'],
+        (req: Request, res: Response) => {
+          const splitted = req.url.split('/')
+          const fileName = splitted[splitted.length - 1]
+          const path = req.url.replace(fileName, '')
+          const filePath = `${DATA_ROOT}${path}${fileName}`
+          const type = mime.getType(filePath) || 'text/plain'
 
-        this.setCachingHeaders(res, type)
+          this.setCachingHeaders(res, type)
 
-        try {
-          res.status(200)
-          res.contentType(type)
-          const data = fs.readFileSync(filePath)
-          res.send(data)
-        } catch (err) {
-          res.status(404)
-          if (mime.getType(req.url)) {
-            res.end()
-          } else {
-            res.contentType('text/html')
-            res.send(this.getNotFoundHtml(indexRoute, this.getLang(req)))
+          try {
+            res.status(200)
+            res.contentType(type)
+            const data = fs.readFileSync(filePath)
+            res.send(data)
+          } catch (err) {
+            res.status(404)
+            if (mime.getType(req.url)) {
+              res.end()
+            } else {
+              res.contentType('text/html')
+              res.send(this.getNotFoundHtml(indexRoute, req, this.getLang(req)))
+            }
           }
         }
-      })
+      )
 
       app.get(['/sitemap.xml'], (req: Request, res: Response) => {
         const urls: string[] = []
@@ -89,6 +92,7 @@ export class PageService {
           if (route.routing.redirect) {
             res.redirect(`/${this.getLang(req)}`)
           }
+
           // check if any of the route files changed
           let fileChanged = false
           route.filePaths.forEach((filePath) => {
@@ -151,7 +155,7 @@ export class PageService {
               res.send(html)
             } catch (e) {
               res.status(404)
-              res.send(this.getNotFoundHtml(indexRoute, this.getLang(req)))
+              res.send(this.getNotFoundHtml(indexRoute, req, this.getLang(req)))
             }
           } else {
             res.status(status)
@@ -163,6 +167,24 @@ export class PageService {
             }
           }
         })
+      })
+
+      app.get(['*'], (req: Request, res: Response) => {
+        const splitted = req.url.split('/')
+        const fileName = splitted[splitted.length - 1]
+        const path = req.url.replace(fileName, '')
+        const filePath = `${DATA_ROOT}${path}${fileName}`
+        const type = mime.getType(filePath) || 'text/plain'
+
+        this.setCachingHeaders(res, type)
+
+        res.status(404)
+        if (mime.getType(req.url)) {
+          res.end()
+        } else {
+          res.contentType('text/html')
+          res.send(this.getNotFoundHtml(indexRoute, req, this.getLang(req)))
+        }
       })
     })
   }
@@ -198,23 +220,31 @@ export class PageService {
     res.setHeader('Cache-control', `public, max-age=${maxAge}`)
   }
 
-  private getNotFoundHtml(indexRoute: IRouting, lang: ELanguage): string {
+  private getNotFoundHtml(indexRoute: IRouting, request: Request, lang: ELanguage): string {
     const notFoundRoute = indexRoute.children.find((child) => child.is404Page)
     const tempSiteGenerator = new SiteGenerator(indexRoute.file, lang)
-    return tempSiteGenerator.getRouteHTML(
-      tempSiteGenerator.getHTML(),
-      PAGE_ROOT + '/' + notFoundRoute.file
+    return tempSiteGenerator.finalize(
+      tempSiteGenerator.getRouteHTML(
+        tempSiteGenerator.getHTML(),
+        PAGE_ROOT + '/' + notFoundRoute.file
+      ),
+      indexRoute,
+      request
     )
   }
 
   private getLang(req: Request): ELanguage {
     let lang = req.params['lang'] as ELanguage
-
+    if (!lang) {
+      const urlLang = req.originalUrl.replaceAll('/', ' ').trim().split(' ')?.[0]
+      if (Object.values(ELanguage).includes(urlLang as ELanguage)) {
+        lang = urlLang as ELanguage
+      }
+    }
     if (!lang) {
       acceptLanguage.languages(Object.values(ELanguage))
       lang = acceptLanguage.get(req.headers['accept-language']) as ELanguage
     }
-
     return lang
   }
 }

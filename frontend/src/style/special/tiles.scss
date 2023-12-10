@@ -20,9 +20,9 @@
     position: relative;
     transition: background-color 0.1s ease-in-out 0s;
 
-    &--ad {
+    &--cta {
       background-color: color(accent1);
-      display: flex;
+      display: flex !important;
       flex-direction: column;
       justify-content: center;
       position: relative;

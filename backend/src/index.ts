@@ -6,7 +6,7 @@ import https from 'https'
 import { PageService } from './services/page.service'
 
 export const PROTOCOL_AND_DOMAIN = 'https://www.wehrli.me'
-export const TITLE_POSTFIX = ' | Tailored Software for the Web | Michel Wehrli'
+export const TITLE_POSTFIX = ' | Custom web solutions | Michel Wehrli'
 
 dotenv.config({ path: '../.env' })
 

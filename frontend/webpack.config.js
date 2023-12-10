@@ -70,6 +70,7 @@ const config = {
       patterns: [
         { from: './src/robots.txt', to: './robots.txt' },
         { from: './src/static', to: './res/static' },
+        { from: './src/favicon.png', to: './favicon.png' },
       ],
     }),
     new MiniCssExtractPlugin({

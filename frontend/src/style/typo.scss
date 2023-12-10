@@ -115,6 +115,25 @@ a {
       display: none;
     }
   }
+
+  &--linkedin {
+    display: inline-block;
+    margin-right: 8px;
+
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--github {
+    display: inline-block;
+
+    img {
+      display: block;
+    }
+  }
 }
 
 .quote {

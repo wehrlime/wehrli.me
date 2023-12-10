@@ -3,8 +3,8 @@ import { IIndexRouting } from '../types/routes/IRouting'
 
 const portfolioService = new PortfolioService()
 const mainTitle = {
-  en: 'Tailored Software for the Web | Michel Wehrli',
-  de: 'Maßgeschneiderte Software für das Web | Michel Wehrli',
+  en: 'Custom web solutions | Michel Wehrli',
+  de: 'Individuelle Weblösungen | Michel Wehrli',
 }
 
 export const routes: IIndexRouting[] = [
@@ -20,8 +20,8 @@ export const routes: IIndexRouting[] = [
             de: `${mainTitle.de}`,
           },
           description: {
-            en: "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
-            de: 'Maßgeschneiderte Weblösungen für informative Websites, mobile Apps und anspruchsvolle Systeme. Von der Architektur bis zur Integration, lassen Sie mich Ihr Projekt zum Leben erwecken.',
+            en: 'Custom web solutions: Websites, mobile apps, complex systems. From architecture to integration - your project in the best hands.',
+            de: 'Individuelle Weblösungen: Websites, mobile Apps, komplexe Systeme. Von Architektur bis Integration - Ihr Projekt in besten Händen.',
           },
           canonical: 'https://www.wehrli.me/',
         },
@@ -35,8 +35,8 @@ export const routes: IIndexRouting[] = [
             de: `${mainTitle.de}`,
           },
           description: {
-            en: "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
-            de: 'Maßgeschneiderte Weblösungen für informative Websites, mobile Apps und anspruchsvolle Systeme. Von der Architektur bis zur Integration, lassen Sie mich Ihr Projekt zum Leben erwecken.',
+            en: 'Custom web solutions: Websites, mobile apps, complex systems. From architecture to integration - your project in the best hands.',
+            de: 'Individuelle Weblösungen: Websites, mobile Apps, komplexe Systeme. Von Architektur bis Integration - Ihr Projekt in besten Händen.',
           },
           canonical: 'https://www.wehrli.me/:lang/',
         },
