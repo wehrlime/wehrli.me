@@ -1,5 +1,6 @@
 import fs from 'fs'
 import { cwd } from 'process'
+import { ELanguage } from './translate.service'
 
 const REFERENCE_BASE_URLS = {
   DEV: '\\..\\..\\root\\pages\\portfolio\\',
@@ -11,12 +12,14 @@ export class PortfolioService {
     return fs.readFileSync(`${cwd()}${REFERENCE_BASE_URLS[process.env.MODE]}${name}.html`, 'utf-8')
   }
 
-  getUrl(base: string, name: string): string {
-    return `${base}/portfolio/${name}`
+  getUrl(base: string, name: string, language: ELanguage): string {
+    return `${base}/${language}/portfolio/${name}/`
   }
 
   getUrls(base: string, name: string): string[] {
-    return this.load().map((url) => `/${base.replace(`:${name}`, url)}`)
+    return this.load().flatMap((url) =>
+      Object.values(ELanguage).map((language) => `/${language}/${base.replace(`:${name}`, url)}/`)
+    )
   }
 
   private load(): string[] {

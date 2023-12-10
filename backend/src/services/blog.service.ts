@@ -22,8 +22,14 @@ export class BlogService {
 
     return {
       meta: {
-        title: article.title + TITLE_POSTFIX,
-        description: article.teaser,
+        title: {
+          de: article.title + TITLE_POSTFIX,
+          en: article.title + TITLE_POSTFIX,
+        },
+        description: {
+          de: article.teaser,
+          en: article.teaser,
+        },
         canonical: this.getUrl(article),
       },
       html: this.generateArticleHtml(blogId, article),

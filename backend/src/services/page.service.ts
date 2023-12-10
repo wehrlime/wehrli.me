@@ -48,7 +48,7 @@ export class PageService {
 
         routes.map((indexRoute) =>
           indexRoute.children
-            ?.filter((child) => !child.is404Page && !child?.meta?.noIndex)
+            ?.filter((child) => !child.is404Page && !child?.meta?.noIndex && !!child.urlPart)
             ?.map((child) =>
               this.getPaths(child).forEach((route) => {
                 if (route.routing?.getChildUrls) {
@@ -58,7 +58,14 @@ export class PageService {
                       urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${url}</loc></url>`)
                     )
                 } else {
-                  urls.push(`<url><loc>${PROTOCOL_AND_DOMAIN}${route.urlPath}</loc></url>`)
+                  Object.values(ELanguage).forEach((language) => {
+                    urls.push(
+                      `<url><loc>${PROTOCOL_AND_DOMAIN}${route.urlPath.replace(
+                        ':lang',
+                        language
+                      )}/</loc></url>`
+                    )
+                  })
                 }
               })
             )

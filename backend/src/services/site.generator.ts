@@ -17,7 +17,7 @@ const META_TITLE_REGEX = /<meta name="title" content="([^")]*)"\/>/g
 const META_DESCRIPTION_REGEX = /<meta name="description" content="([^")]*)"\/>/g
 const LINK_CANONICAL = /<link rel="canonical" href="([^")]*)"\/>/g
 const META_ROBOTS = /<meta name="robots"\/>/g
-const LANG_HREFS = /<a href=".*:lang\/(.*?)"/g
+const LANG_HREFS = /:lang/g
 const LANG_URLS = /"LANG_URL:.*?"/g
 const CURRENT_YEAR = /CURRENT_YEAR/g
 
@@ -112,7 +112,7 @@ export class SiteGenerator {
               .map((word) => word[0].toUpperCase() + word.substring(1))
               .join(' ')}`,
           },
-          canonical: this.portfolioService.getUrl(PROTOCOL_AND_DOMAIN, name),
+          canonical: this.portfolioService.getUrl(PROTOCOL_AND_DOMAIN, name, this.lang),
         }
       } catch (e) {
         console.error(e)
@@ -147,7 +147,10 @@ export class SiteGenerator {
       if (meta?.canonical) {
         const canonicalMatch = html.match(LINK_CANONICAL)?.[0]
         if (canonicalMatch) {
-          html = html.replace(canonicalMatch, `<link rel="canonical" href="${meta.canonical}" />`)
+          html = html.replace(
+            canonicalMatch,
+            `<link rel="canonical" href="${meta.canonical.replace(':lang', this.lang)}" />`
+          )
         }
       }
 

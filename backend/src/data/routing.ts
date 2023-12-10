@@ -38,7 +38,7 @@ export const routes: IIndexRouting[] = [
             en: "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
             de: 'Maßgeschneiderte Weblösungen für informative Websites, mobile Apps und anspruchsvolle Systeme. Von der Architektur bis zur Integration, lassen Sie mich Ihr Projekt zum Leben erwecken.',
           },
-          canonical: 'https://www.wehrli.me/',
+          canonical: 'https://www.wehrli.me/:lang/',
         },
       },
       {
@@ -53,7 +53,7 @@ export const routes: IIndexRouting[] = [
             en: `Imprint of wehrli.me`,
             de: `Impressum von wehrli.me`,
           },
-          canonical: 'https://www.wehrli.me/imprint',
+          canonical: 'https://www.wehrli.me/:lang/imprint/',
         },
       },
       {
@@ -68,7 +68,7 @@ export const routes: IIndexRouting[] = [
             en: `Privacy policy of wehrli.me`,
             de: `Datenschutz von wehrli.me`,
           },
-          canonical: 'https://www.wehrli.me/privacy',
+          canonical: 'https://www.wehrli.me/:lang/privacy/',
         },
       },
       /*{
