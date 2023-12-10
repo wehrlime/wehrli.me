@@ -110,6 +110,13 @@ header {
     flex-direction: row;
     gap: space(1);
 
+    @media only screen and (max-width: 650px) {
+      top: initial;
+      right: initial;
+      left: space(3);
+      bottom: space(0.5);
+    }
+
     &__item {
       &--active {
         color: color(accent1);
