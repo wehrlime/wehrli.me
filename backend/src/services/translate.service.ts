@@ -15,5 +15,7 @@ export class TranslateService {
     )
     otherLanguages.forEach((otherLanguage) => (html = html.replace(regexes[otherLanguage], '')))
     return html
+      .replaceAll(`<!-- lang:${targetLanguage} -->`, '')
+      .replaceAll(`<!-- /lang:${targetLanguage} -->`, '')
   }
 }

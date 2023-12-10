@@ -9,11 +9,28 @@
       />
     </div>
     <nav class="header__inner__nav">
-      <a class="header__inner__nav__item" href="/#portfolio"> Back to start page </a>
+      <a href="/:lang/" class="header__inner__nav__item">
+        <!-- lang:en -->
+        Back to start page
+        <!-- /lang:en -->
+        <!-- lang:de -->
+        Zur Startseite
+        <!-- /lang:de -->
+      </a>
     </nav>
+    <div class="header__language-nav">
+      <!-- lang:en -->
+      <a href="LANG_URL:de" class="header__language-nav__item">DE</a>
+      <a href="LANG_URL:en" class="header__language-nav__item header__language-nav__item--active">
+        EN
+      </a>
+      <!-- /lang:en -->
+      <!-- lang:de -->
+      <a href="LANG_URL:de" class="header__language-nav__item header__language-nav__item--active">
+        DE
+      </a>
+      <a href="LANG_URL:en" class="header__language-nav__item">EN</a>
+      <!-- /lang:de -->
+    </div>
   </div>
 </header>
-
-<script>
-  console.log('ciao', history.state)
-</script>

@@ -1,3 +1,5 @@
+import { ELanguage } from '../../services/translate.service'
+
 export interface IIndexRouting {
   file: string
   children?: IRouting[]
@@ -14,8 +16,14 @@ export interface IRouting {
 }
 
 export interface IMeta {
-  title: string
-  description?: string
+  title: {
+    [ELanguage.DE]: string
+    [ELanguage.EN]: string
+  }
+  description?: {
+    [ELanguage.DE]: string
+    [ELanguage.EN]: string
+  }
   canonical?: string
   noIndex?: boolean
 }

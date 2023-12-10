@@ -101,6 +101,25 @@ header {
       }
     }
   }
+
+  &__language-nav {
+    position: absolute;
+    right: space(5);
+    top: space(1);
+    display: flex;
+    flex-direction: row;
+    gap: space(1);
+
+    &__item {
+      &--active {
+        color: color(accent1);
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
 
 .section,

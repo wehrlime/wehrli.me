@@ -17,6 +17,9 @@ const META_TITLE_REGEX = /<meta name="title" content="([^")]*)"\/>/g
 const META_DESCRIPTION_REGEX = /<meta name="description" content="([^")]*)"\/>/g
 const LINK_CANONICAL = /<link rel="canonical" href="([^")]*)"\/>/g
 const META_ROBOTS = /<meta name="robots"\/>/g
+const LANG_HREFS = /<a href=".*:lang\/(.*?)"/g
+const LANG_URLS = /"LANG_URL:.*?"/g
+const CURRENT_YEAR = /CURRENT_YEAR/g
 
 export class SiteGenerator {
   private readonly blogService = new BlogService()
@@ -92,12 +95,23 @@ export class SiteGenerator {
       try {
         const name = request.params['name']
         html = html.replace(portfolioArticleMatches[0], this.portfolioService.getHtml(name))
+        const portfolioTitle = {
+          en: 'Portfolio Page:',
+          de: 'Portfolio:',
+        }
         meta = {
-          title: `Portfolio Page: ${name
-            .replaceAll('-', ' ')
-            .split(' ')
-            .map((word) => word[0].toUpperCase() + word.substring(1))
-            .join(' ')}`,
+          title: {
+            en: `${portfolioTitle.en} ${name
+              .replaceAll('-', ' ')
+              .split(' ')
+              .map((word) => word[0].toUpperCase() + word.substring(1))
+              .join(' ')}`,
+            de: `${portfolioTitle.de} ${name
+              .replaceAll('-', ' ')
+              .split(' ')
+              .map((word) => word[0].toUpperCase() + word.substring(1))
+              .join(' ')}`,
+          },
           canonical: this.portfolioService.getUrl(PROTOCOL_AND_DOMAIN, name),
         }
       } catch (e) {
@@ -109,22 +123,27 @@ export class SiteGenerator {
       if (meta?.title) {
         const titleMatch = html.match(TITLE_REGEX)?.[0]
         if (titleMatch) {
-          html = html.replace(titleMatch, `<title>${meta.title}</title>`)
+          html = html.replace(titleMatch, `<title>${meta.title[this.lang]}</title>`)
         }
         const metaTitleMatch = html.match(META_TITLE_REGEX)?.[0]
         if (metaTitleMatch) {
-          html = html.replace(metaTitleMatch, `<meta name="title" content="${meta.title}" />`)
+          html = html.replace(
+            metaTitleMatch,
+            `<meta name="title" content="${meta.title[this.lang]}" />`
+          )
         }
       }
+
       if (meta?.description) {
         const descriptionMatch = html.match(META_DESCRIPTION_REGEX)?.[0]
         if (descriptionMatch) {
           html = html.replace(
             descriptionMatch,
-            `<meta name="description" content="${meta.description}" />`
+            `<meta name="description" content="${meta.description[this.lang]}" />`
           )
         }
       }
+
       if (meta?.canonical) {
         const canonicalMatch = html.match(LINK_CANONICAL)?.[0]
         if (canonicalMatch) {
@@ -140,6 +159,28 @@ export class SiteGenerator {
         )
       }
     }
+
+    const langHrefMatches = html.match(LANG_HREFS)
+    langHrefMatches?.forEach((langHrefMatch) => {
+      html = html.replace(langHrefMatch, langHrefMatch.replace(':lang', this.lang))
+    })
+
+    const langUrlMatches = html.match(LANG_URLS)
+    langUrlMatches?.forEach((langUrlMatch) => {
+      const targetUrl = langUrlMatch.replaceAll('"', '').replaceAll('LANG_URL:', '')
+      const url = new URL(PROTOCOL_AND_DOMAIN + request.originalUrl)
+      if (url.pathname.includes(`/${this.lang}/`)) {
+        url.pathname = url.pathname.replace(`/${this.lang}/`, `/${targetUrl}/`)
+      } else {
+        url.pathname = `/${targetUrl}/`
+      }
+      html = html.replace(langUrlMatch, url.href)
+    })
+
+    const currentYearMatches = html.match(CURRENT_YEAR)
+    currentYearMatches?.forEach((currentYearMatch) => {
+      html = html.replace(currentYearMatch, new Date().getFullYear().toString())
+    })
 
     return this.translateService.translate(html, this.lang)
   }

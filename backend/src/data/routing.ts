@@ -2,7 +2,10 @@ import { PortfolioService } from '../services/portfolio.service'
 import { IIndexRouting } from '../types/routes/IRouting'
 
 const portfolioService = new PortfolioService()
-const mainTitle = 'Tailor-made Software for the Web | Michel Wehrli'
+const mainTitle = {
+  en: 'Tailored Software for the Web | Michel Wehrli',
+  de: 'Maßgeschneiderte Software für das Web | Michel Wehrli',
+}
 
 export const routes: IIndexRouting[] = [
   {
@@ -12,9 +15,14 @@ export const routes: IIndexRouting[] = [
         urlPart: '',
         file: 'start.html',
         meta: {
-          title: `${mainTitle}`,
-          description:
-            "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
+          title: {
+            en: `${mainTitle.en}`,
+            de: `${mainTitle.de}`,
+          },
+          description: {
+            en: "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
+            de: 'Maßgeschneiderte Weblösungen für informative Websites, mobile Apps und anspruchsvolle Systeme. Von der Architektur bis zur Integration, lassen Sie mich Ihr Projekt zum Leben erwecken.',
+          },
           canonical: 'https://www.wehrli.me/',
         },
       },
@@ -22,9 +30,14 @@ export const routes: IIndexRouting[] = [
         urlPart: ':lang',
         file: 'start.html',
         meta: {
-          title: `${mainTitle}`,
-          description:
-            "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
+          title: {
+            en: `${mainTitle.en}`,
+            de: `${mainTitle.de}`,
+          },
+          description: {
+            en: "Tailored web solutions for informative sites, mobile apps, and large-scale systems. From architecture to integration, let's bring your project to life.",
+            de: 'Maßgeschneiderte Weblösungen für informative Websites, mobile Apps und anspruchsvolle Systeme. Von der Architektur bis zur Integration, lassen Sie mich Ihr Projekt zum Leben erwecken.',
+          },
           canonical: 'https://www.wehrli.me/',
         },
       },
@@ -32,8 +45,14 @@ export const routes: IIndexRouting[] = [
         urlPart: ':lang/imprint',
         file: 'imprint.html',
         meta: {
-          title: `Imprint | ${mainTitle}`,
-          description: `Imprint of wehrli.me`,
+          title: {
+            en: `Imprint | ${mainTitle.en}`,
+            de: `Impressum | ${mainTitle.de}`,
+          },
+          description: {
+            en: `Imprint of wehrli.me`,
+            de: `Impressum von wehrli.me`,
+          },
           canonical: 'https://www.wehrli.me/imprint',
         },
       },
@@ -41,8 +60,14 @@ export const routes: IIndexRouting[] = [
         urlPart: ':lang/privacy',
         file: 'privacy.html',
         meta: {
-          title: `Privacy | ${mainTitle}`,
-          description: 'Privacy policy of wehrli.me',
+          title: {
+            en: `Privacy policy | ${mainTitle.en}`,
+            de: `Datenschutz | ${mainTitle.de}`,
+          },
+          description: {
+            en: `Privacy policy of wehrli.me`,
+            de: `Datenschutz von wehrli.me`,
+          },
           canonical: 'https://www.wehrli.me/privacy',
         },
       },

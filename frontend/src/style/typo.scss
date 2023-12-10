@@ -90,6 +90,8 @@ p {
 a {
   text-decoration: none;
   position: relative;
+  display: inline;
+  white-space: nowrap;
 
   &::after {
     content: '';

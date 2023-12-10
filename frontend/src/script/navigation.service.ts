@@ -4,8 +4,6 @@ export class NavigationService {
   private readonly anchorEs: NodeListOf<HTMLAnchorElement>
 
   constructor() {
-    console.log('yo')
-
     this.navE = document.querySelector('.header__inner__nav')
     this.navItemEs = document.querySelectorAll('.header__inner__nav__item')
     this.anchorEs = document.querySelectorAll('a[name]')
@@ -19,7 +17,6 @@ export class NavigationService {
 
     const domain = `${location.protocol}//${location.host}`
     let page = location.href.split(`${domain}/`)[1]
-    console.log(page)
     if (!page || page.startsWith('#')) {
       page = 'default'
     }
